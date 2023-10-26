@@ -13,6 +13,8 @@
 		1222CE6A2AEA22C9003D3DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE682AEA22C9003D3DB7 /* Main.storyboard */; };
 		1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */; };
 		1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */; };
+		1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE782AEA5605003D3DB7 /* Celebrity.swift */; };
+		1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE7A2AEA5A3E003D3DB7 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1222CE6E2AEA22CA003D3DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1222CE702AEA22CA003D3DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1222CE782AEA5605003D3DB7 /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
+		1222CE7A2AEA5A3E003D3DB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,33 @@
 		1222CE612AEA22C9003D3DB7 /* Son of Mom's Friend */ = {
 			isa = PBXGroup;
 			children = (
-				1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */,
-				1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */,
-				1222CE662AEA22C9003D3DB7 /* ViewController.swift */,
+				1222CE762AEA55B8003D3DB7 /* Service */,
 				1222CE682AEA22C9003D3DB7 /* Main.storyboard */,
 				1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */,
 				1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */,
 				1222CE702AEA22CA003D3DB7 /* Info.plist */,
 			);
 			path = "Son of Mom's Friend";
+			sourceTree = "<group>";
+		};
+		1222CE762AEA55B8003D3DB7 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */,
+				1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */,
+				1222CE662AEA22C9003D3DB7 /* ViewController.swift */,
+				1222CE772AEA55CF003D3DB7 /* Models */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1222CE772AEA55CF003D3DB7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE782AEA5605003D3DB7 /* Celebrity.swift */,
+				1222CE7A2AEA5A3E003D3DB7 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +163,8 @@
 				1222CE672AEA22C9003D3DB7 /* ViewController.swift in Sources */,
 				1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */,
 				1222CE652AEA22C9003D3DB7 /* SceneDelegate.swift in Sources */,
+				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
+				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
