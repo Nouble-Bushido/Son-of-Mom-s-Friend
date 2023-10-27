@@ -13,5 +13,5 @@ struct Celebrity {
     var biography: String
     var dateOfBirth: Date
     var photoName: String
-    var achievements: [Achievement]
+    var achievementIDs: [Int]
 }
