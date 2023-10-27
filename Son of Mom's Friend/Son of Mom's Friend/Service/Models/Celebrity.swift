@@ -12,6 +12,6 @@ struct Celebrity {
     var name: String
     var biography: String
     var dateOfBirth: Date
-    var photo: UIImage
+    var photoName: String
     var achievements: [Achievement]
 }

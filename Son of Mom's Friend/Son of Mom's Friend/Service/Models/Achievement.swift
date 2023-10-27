@@ -8,6 +8,7 @@
 import UIKit
 
 struct Achievement {
+    var id: Int
     var description: String
     var date: Date
 }
