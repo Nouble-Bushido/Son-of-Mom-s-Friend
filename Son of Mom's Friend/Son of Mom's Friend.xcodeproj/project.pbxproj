@@ -16,6 +16,9 @@
 		1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE782AEA5605003D3DB7 /* Celebrity.swift */; };
 		1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE7A2AEA5A3E003D3DB7 /* User.swift */; };
 		1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE7C2AEA6011003D3DB7 /* Achievement.swift */; };
+		1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE822AF1F4BF003D3DB7 /* UserManager.swift */; };
+		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
+		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		1222CE782AEA5605003D3DB7 /* Celebrity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Celebrity.swift; sourceTree = "<group>"; };
 		1222CE7A2AEA5A3E003D3DB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1222CE7C2AEA6011003D3DB7 /* Achievement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Achievement.swift; sourceTree = "<group>"; };
+		1222CE822AF1F4BF003D3DB7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
+		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 				1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */,
 				1222CE662AEA22C9003D3DB7 /* ViewController.swift */,
 				1222CE772AEA55CF003D3DB7 /* Models */,
+				1222CE822AF1F4BF003D3DB7 /* UserManager.swift */,
+				1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */,
+				1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -165,10 +174,13 @@
 			files = (
 				1222CE672AEA22C9003D3DB7 /* ViewController.swift in Sources */,
 				1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */,
+				1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */,
+				1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */,
 				1222CE652AEA22C9003D3DB7 /* SceneDelegate.swift in Sources */,
 				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
 				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
 				1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */,
+				1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
