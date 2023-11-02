@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Celebrity {
+struct Celebrity: Codable {
     var id: Int
     var name: String
     var biography: String
