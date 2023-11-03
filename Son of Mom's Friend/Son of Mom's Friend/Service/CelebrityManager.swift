@@ -8,23 +8,25 @@
 import UIKit
 
 class CelebrityManager {
-    private var celebrites: [Celebrity] = []
-
+    
     func getCelebrities(birthdate: Date?) -> [Celebrity] {
-        var filterCelebrities: [Celebrity] = []
-        
-        for celebrite in celebrites {
-            if let filterBirthday = birthdate, celebrite.dateOfBirth == filterBirthday {
-                filterCelebrities.append(celebrite)
+        if let savedCelebritiesData = UserDefaults.standard.data(forKey: "celebrities") {
+            if let celebrities = try? JSONDecoder().decode([Celebrity].self, from: savedCelebritiesData) {
+                var filterCelebrities = celebrities
+                
+                if let birthday = birthdate {
+                    filterCelebrities = filterCelebrities.filter { $0.dateOfBirth == birthday }
+                }
+                return filterCelebrities
             }
         }
-        return filterCelebrities
+        return []
     }
     
     func getCelebrityId(id: Int) -> Celebrity? {
-        for celebrite in celebrites {
-            if celebrite.id == id {
-                return celebrite
+        if let savedCelebritiesData = UserDefaults.standard.data(forKey: "celebrities") {
+            if let celebrities = try? JSONDecoder().decode([Celebrity].self, from: savedCelebritiesData) {
+                return celebrities.first { $0.id == id }
             }
         }
         return nil

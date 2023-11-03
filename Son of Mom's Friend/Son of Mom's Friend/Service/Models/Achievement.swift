@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Achievement {
+struct Achievement: Codable {
     var id: Int
     var date: Date
     var celebrityId: Int

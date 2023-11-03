@@ -8,19 +8,24 @@
 import UIKit
 
 class AchievementManager {
-    var achievements: [Achievement] = []
     
-    func getAchievements(age: Int?, celebrityId: Int?) -> [Achievement] {
-        var filterAchievements: [Achievement] = []
-        
-        for achievement in achievements {
-            if let ageAchievement = age, achievement.ageAtAchievement == ageAchievement {
-                filterAchievements.append(achievement)
-            }
-            if let celebrityId = celebrityId, achievement.celebrityId == celebrityId {
-                filterAchievements.append(achievement)
+    func getAchievements(age: Int?, celebrityId: Int?) -> [Achievement] {   
+        if let savedAchievementsData = UserDefaults.standard.data(forKey: "achievements") {
+            if let achievements = try? JSONDecoder().decode([Achievement].self, from: savedAchievementsData) {
+                var filteredAchievements = achievements
+
+                if let ageAchievement = age {
+                    filteredAchievements = filteredAchievements.filter { $0.ageAtAchievement == ageAchievement }
+                }
+
+                if let celebrityId = celebrityId {
+                    filteredAchievements = filteredAchievements.filter { $0.celebrityId == celebrityId }
+                }
+
+                return filteredAchievements
             }
         }
-        return filterAchievements
+        
+        return []
     }
 }
