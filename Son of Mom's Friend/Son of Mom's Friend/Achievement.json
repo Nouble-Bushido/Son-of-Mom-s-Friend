@@ -1,0 +1,109 @@
+{
+    "achievements": [
+        {
+            "id": 1,
+            "date": "2000-01-15",
+            "celebrityId": 1,
+            "description": "Получила премию Оскар",
+            "ageAtAchievement": 25
+        },
+        {
+            "id": 2,
+            "date": "2012-05-20",
+            "celebrityId": 1,
+            "description": "Основала фонд помощи детям",
+            "ageAtAchievement": 37
+        },
+        {
+            "id": 3,
+            "date": "2019-09-10",
+            "celebrityId": 2,
+            "description": "Получил премию Эмми",
+            "ageAtAchievement": 45
+        },
+        {
+            "id": 4,
+            "date": "2016-11-30",
+            "celebrityId": 2,
+            "description": "Основал фонд по экологии",
+            "ageAtAchievement": 42
+        },
+        {
+            "id": 5,
+            "date": "2015-02-22",
+            "celebrityId": 3,
+            "description": "Победила на Грэмми",
+            "ageAtAchievement": 33
+        },
+        {
+            "id": 6,
+            "date": "2020-08-15",
+            "celebrityId": 3,
+            "description": "Основала собственную модную линию",
+            "ageAtAchievement": 39
+        },
+        {
+            "id": 7,
+            "date": "2008-07-20",
+            "celebrityId": 4,
+            "description": "Запустил SpaceX",
+            "ageAtAchievement": 37
+        },
+        {
+            "id": 8,
+            "date": "2018-12-10",
+            "celebrityId": 4,
+            "description": "Посадил Tesla на Марс",
+            "ageAtAchievement": 47
+        },
+        {
+            "id": 9,
+            "date": "2010-06-15",
+            "celebrityId": 5,
+            "description": "Получила свою первую платиновую пластинку",
+            "ageAtAchievement": 20
+        },
+        {
+            "id": 10,
+            "date": "2016-11-05",
+            "celebrityId": 5,
+            "description": "Победила на MTV Video Music Awards",
+            "ageAtAchievement": 27
+        },
+        {
+            "id": 11,
+            "date": "2018-04-10",
+            "celebrityId": 1,
+            "description": "Снялась в блокбастере",
+            "ageAtAchievement": 42
+        },
+        {
+            "id": 12,
+            "date": "2022-01-25",
+            "celebrityId": 2,
+            "description": "Получил награду за активизм",
+            "ageAtAchievement": 48
+        },
+        {
+            "id": 13,
+            "date": "2017-12-05",
+            "celebrityId": 3,
+            "description": "Стала лицом известного бренда",
+            "ageAtAchievement": 36
+        },
+        {
+            "id": 14,
+            "date": "2013-05-15",
+            "celebrityId": 4,
+            "description": "Успешный запуск ракеты Falcon 9",
+            "ageAtAchievement": 41
+        },
+        {
+            "id": 15,
+            "date": "2019-10-02",
+            "celebrityId": 5,
+            "description": "Выиграла награду за лучший альбом",
+            "ageAtAchievement": 29
+        }
+    ]
+}
