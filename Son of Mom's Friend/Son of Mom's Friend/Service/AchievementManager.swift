@@ -24,4 +24,14 @@ class AchievementManager {
         
         return filteredAchievements
     }
+    
+    static func configure() {
+        guard UserDefaults.standard.data(forKey: "celebrities") == nil else { return }
+        if let url = Bundle.main.url(forResource: "achievements", withExtension: "json"),
+           let data = try? Data(contentsOf: url),
+           let achievements = try? JSONDecoder().decode([Achievement].self, from: data) {
+            let encodedData = try? JSONEncoder().encode(achievements)
+            UserDefaults.standard.set(encodedData, forKey: "achievements")
+        }
+    }
 }

@@ -19,6 +19,8 @@
 		1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE822AF1F4BF003D3DB7 /* UserManager.swift */; };
 		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
+		1222CE8A2AF8908E003D3DB7 /* Achievement.json in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE882AF8908E003D3DB7 /* Achievement.json */; };
+		1222CE8B2AF8908E003D3DB7 /* Celebrity.json in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE892AF8908E003D3DB7 /* Celebrity.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		1222CE822AF1F4BF003D3DB7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
+		1222CE882AF8908E003D3DB7 /* Achievement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Achievement.json; path = ../../../../Achievement.json; sourceTree = "<group>"; };
+		1222CE892AF8908E003D3DB7 /* Celebrity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Celebrity.json; path = ../../../../Celebrity.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */,
 				1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */,
 				1222CE702AEA22CA003D3DB7 /* Info.plist */,
+				1222CE882AF8908E003D3DB7 /* Achievement.json */,
+				1222CE892AF8908E003D3DB7 /* Celebrity.json */,
 			);
 			path = "Son of Mom's Friend";
 			sourceTree = "<group>";
@@ -160,8 +166,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */,
+				1222CE8A2AF8908E003D3DB7 /* Achievement.json in Resources */,
 				1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */,
 				1222CE6A2AEA22C9003D3DB7 /* Main.storyboard in Resources */,
+				1222CE8B2AF8908E003D3DB7 /* Celebrity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
