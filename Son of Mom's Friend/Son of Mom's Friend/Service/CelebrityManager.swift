@@ -27,4 +27,14 @@ class CelebrityManager {
         
         return celebrities.first { $0.id == id }
     }
+    
+    static func configure() {
+        guard UserDefaults.standard.data(forKey: "celebrities") == nil else { return }
+        if let url = Bundle.main.url(forResource: "celebrities", withExtension: "json"),
+           let data = try? Data(contentsOf: url),
+           let celebrities = try? JSONDecoder().decode([Celebrity].self, from: data) {
+            let encodedData = try? JSONEncoder().encode(celebrities)
+            UserDefaults.standard.set(encodedData, forKey: "celebrities")
+        }
+    }
 }
