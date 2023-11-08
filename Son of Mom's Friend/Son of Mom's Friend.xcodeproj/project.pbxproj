@@ -19,6 +19,7 @@
 		1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE822AF1F4BF003D3DB7 /* UserManager.swift */; };
 		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
+		1222CE952AFB4AD9003D3DB7 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE942AFB4AD9003D3DB7 /* Splash.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		1222CE822AF1F4BF003D3DB7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
+		1222CE942AFB4AD9003D3DB7 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		1222CE762AEA55B8003D3DB7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				1222CE932AFB4A54003D3DB7 /* Presentation */,
 				1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */,
 				1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */,
 				1222CE662AEA22C9003D3DB7 /* ViewController.swift */,
@@ -99,6 +102,22 @@
 				1222CE7A2AEA5A3E003D3DB7 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1222CE932AFB4A54003D3DB7 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE962AFB4AE1003D3DB7 /* Splash */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		1222CE962AFB4AE1003D3DB7 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE942AFB4AD9003D3DB7 /* Splash.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +195,7 @@
 				1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */,
 				1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */,
 				1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */,
+				1222CE952AFB4AD9003D3DB7 /* Splash.swift in Sources */,
 				1222CE652AEA22C9003D3DB7 /* SceneDelegate.swift in Sources */,
 				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
 				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
