@@ -9,23 +9,27 @@ import UIKit
 
 class AchievementManager {
     
-    func getAchievements(age: Int?, celebrityId: Int?) -> [Achievement] {   
-        if let savedAchievementsData = UserDefaults.standard.data(forKey: "achievements") {
-            if let achievements = try? JSONDecoder().decode([Achievement].self, from: savedAchievementsData) {
-                var filteredAchievements = achievements
-
-                if let ageAchievement = age {
-                    filteredAchievements = filteredAchievements.filter { $0.ageAtAchievement == ageAchievement }
-                }
-
-                if let celebrityId = celebrityId {
-                    filteredAchievements = filteredAchievements.filter { $0.celebrityId == celebrityId }
-                }
-
-                return filteredAchievements
-            }
+    func getAchievements(age: Int?, celebrityId: Int?) -> [Achievement] {
+        guard let savedAchievementsData = UserDefaults.standard.data(forKey: "achievements"),
+              let achievements = try? JSONDecoder().decode([Achievement].self, from: savedAchievementsData) else { return [] }
+        var filteredAchievements = achievements
+        
+        if let ageAchievement = age {
+            filteredAchievements = filteredAchievements.filter { $0.ageAtAchievement == ageAchievement }
         }
         
-        return []
+        if let celebrityId = celebrityId {
+            filteredAchievements = filteredAchievements.filter { $0.celebrityId == celebrityId }
+        }
+        
+        return filteredAchievements
+    }
+    
+    static func configure() {
+        guard UserDefaults.standard.data(forKey: "achievements") == nil else { return }
+        if let url = Bundle.main.url(forResource: "Achievement", withExtension: "json"),
+           let data = try? Data(contentsOf: url) {
+            UserDefaults.standard.set(data, forKey: "achievements")
+        }
     }
 }

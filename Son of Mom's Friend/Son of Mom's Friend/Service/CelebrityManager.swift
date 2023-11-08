@@ -10,25 +10,29 @@ import UIKit
 class CelebrityManager {
     
     func getCelebrities(birthdate: Date?) -> [Celebrity] {
-        if let savedCelebritiesData = UserDefaults.standard.data(forKey: "celebrities") {
-            if let celebrities = try? JSONDecoder().decode([Celebrity].self, from: savedCelebritiesData) {
-                var filterCelebrities = celebrities
-                
-                if let birthday = birthdate {
-                    filterCelebrities = filterCelebrities.filter { $0.dateOfBirth == birthday }
-                }
-                return filterCelebrities
-            }
+        guard let savedCelebritiesData = UserDefaults.standard.data(forKey: "celebrities"),
+              let celebrities = try? JSONDecoder().decode([Celebrity].self, from: savedCelebritiesData) else { return []}
+        var filterCelebrities = celebrities
+        
+        if let birthday = birthdate {
+            filterCelebrities = filterCelebrities.filter { $0.dateOfBirth == birthday }
         }
-        return []
+        
+        return filterCelebrities
     }
     
     func getCelebrityId(id: Int) -> Celebrity? {
-        if let savedCelebritiesData = UserDefaults.standard.data(forKey: "celebrities") {
-            if let celebrities = try? JSONDecoder().decode([Celebrity].self, from: savedCelebritiesData) {
-                return celebrities.first { $0.id == id }
-            }
+        guard let savedCelebritiesData = UserDefaults.standard.data(forKey: "celebrities"),
+              let celebrities = try? JSONDecoder().decode([Celebrity].self, from: savedCelebritiesData) else { return nil }
+        
+        return celebrities.first { $0.id == id }
+    }
+    
+    static func configure() {
+        guard UserDefaults.standard.data(forKey: "celebrities") == nil else { return }
+        if let url = Bundle.main.url(forResource: "Celebrity", withExtension: "json"),
+           let data = try? Data(contentsOf: url) {
+            UserDefaults.standard.set(data, forKey: "celebrities")
         }
-        return nil
     }
 }

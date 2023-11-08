@@ -1,0 +1,44 @@
+{
+    "celebrities": [
+        {
+            "id": 1,
+            "name": "Ангелина Джоли",
+            "biography": "Актриса и гуманитарный работник",
+            "dateOfBirth": "1975-06-04",
+            "photoURL": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/d91cf99a-63a2-432a-a72b-ae0b8c6ea1d6/220x330",
+            "achievementIDs": [1, 2, 3]
+        },
+        {
+            "id": 2,
+            "name": "Леонардо ДиКаприо",
+            "biography": "Актёр и экологический активист",
+            "dateOfBirth": "1974-11-11",
+            "photoURL": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/9c33caef-be28-4257-b7ed-a407698f1a32/220x330",
+            "achievementIDs": [4, 5]
+        },
+        {
+            "id": 3,
+            "name": "Бейонсе",
+            "biography": "Певица и актриса",
+            "dateOfBirth": "1981-09-04",
+            "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2gy8BicbdGkHkFNzUjcGI1c8J8V76wmV9HQ&usqp=CAU",
+            "achievementIDs": [6, 7, 8]
+        },
+        {
+            "id": 4,
+            "name": "Элон Маск",
+            "biography": "Предприниматель и инженер",
+            "dateOfBirth": "1971-06-28",
+            "photoURL": "https://thumbs.dfs.ivi.ru/storage28/contents/c/7/f18514fd0f32464135ed8899085f0f.jpg",
+            "achievementIDs": [9, 10]
+        },
+        {
+            "id": 5,
+            "name": "Тейлор Свифт",
+            "biography": "Певица и автор песен",
+            "dateOfBirth": "1989-12-13",
+            "photoURL": "https://www.kino-teatr.ru/acter/foto/hollywood/256490.jpg",
+            "achievementIDs": [11, 12, 13]
+        }
+    ]
+}
