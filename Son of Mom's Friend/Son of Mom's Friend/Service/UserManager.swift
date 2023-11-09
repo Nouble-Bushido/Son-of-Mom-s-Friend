@@ -9,7 +9,7 @@ import UIKit
 
 class UserManager {
     
-    func getUserBirthday() -> Date? {
+   static func getUserBirthday() -> Date? {
         return UserDefaults.standard.value(forKey: "userBirthday") as? Date
     }
     
