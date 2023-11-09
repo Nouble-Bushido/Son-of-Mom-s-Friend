@@ -1,5 +1,5 @@
 //
-//  Splash.swift
+//  SplashViewController.swift
 //  Son of Mom's Friend
 //
 //  Created by Артем Чжен on 08.11.2023.
@@ -12,21 +12,17 @@ class SplashViewController: UIViewController {
     //MARK: GUI
     private lazy var imageView: UIImageView = {
         let image = UIImageView()
-        
         image.image = UIImage(named: "image")
-        
         return image
     }()
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        
         label.textColor = .white
         label.numberOfLines = 2
         label.textAlignment = .center
         label.font = UIFont(name: "Nunito-SemiBold", size: 24)
         label.text = "Здесь тебя ждет сын маминой подруги"
-        
        return label
     }()
     //MARK: Life cycle
@@ -48,7 +44,7 @@ class SplashViewController: UIViewController {
             make.width.equalTo(349)
             make.height.equalTo(402)
             make.center.equalToSuperview().offset(-60)
-            make.leading.trailing.equalTo(5)
+            make.leading.trailing.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in
