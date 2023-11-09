@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */; };
-		1222CE652AEA22C9003D3DB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */; };
 		1222CE672AEA22C9003D3DB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE662AEA22C9003D3DB7 /* ViewController.swift */; };
-		1222CE6A2AEA22C9003D3DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE682AEA22C9003D3DB7 /* Main.storyboard */; };
 		1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */; };
 		1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */; };
 		1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE782AEA5605003D3DB7 /* Celebrity.swift */; };
@@ -19,15 +17,15 @@
 		1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE822AF1F4BF003D3DB7 /* UserManager.swift */; };
 		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
-		1222CE952AFB4AD9003D3DB7 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE942AFB4AD9003D3DB7 /* Splash.swift */; };
+		1222CE952AFB4AD9003D3DB7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE942AFB4AD9003D3DB7 /* SplashViewController.swift */; };
+		1222CE992AFB4E47003D3DB7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1222CE982AFB4E47003D3DB7 /* SnapKit */; };
+		1222CE9B2AFB4E47003D3DB7 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1222CE9A2AFB4E47003D3DB7 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1222CE5F2AEA22C9003D3DB7 /* Son of Mom's Friend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Son of Mom's Friend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1222CE662AEA22C9003D3DB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1222CE692AEA22C9003D3DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1222CE6E2AEA22CA003D3DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1222CE702AEA22CA003D3DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,7 +35,7 @@
 		1222CE822AF1F4BF003D3DB7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
-		1222CE942AFB4AD9003D3DB7 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		1222CE942AFB4AD9003D3DB7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1222CE992AFB4E47003D3DB7 /* SnapKit in Frameworks */,
+				1222CE9B2AFB4E47003D3DB7 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				1222CE762AEA55B8003D3DB7 /* Service */,
-				1222CE682AEA22C9003D3DB7 /* Main.storyboard */,
 				1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */,
 				1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */,
 				1222CE702AEA22CA003D3DB7 /* Info.plist */,
@@ -84,7 +83,6 @@
 			children = (
 				1222CE932AFB4A54003D3DB7 /* Presentation */,
 				1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */,
-				1222CE642AEA22C9003D3DB7 /* SceneDelegate.swift */,
 				1222CE662AEA22C9003D3DB7 /* ViewController.swift */,
 				1222CE772AEA55CF003D3DB7 /* Models */,
 				1222CE822AF1F4BF003D3DB7 /* UserManager.swift */,
@@ -115,7 +113,7 @@
 		1222CE962AFB4AE1003D3DB7 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				1222CE942AFB4AD9003D3DB7 /* Splash.swift */,
+				1222CE942AFB4AD9003D3DB7 /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -136,6 +134,10 @@
 			dependencies = (
 			);
 			name = "Son of Mom's Friend";
+			packageProductDependencies = (
+				1222CE982AFB4E47003D3DB7 /* SnapKit */,
+				1222CE9A2AFB4E47003D3DB7 /* SnapKit-Dynamic */,
+			);
 			productName = "Son of Mom's Friend";
 			productReference = 1222CE5F2AEA22C9003D3DB7 /* Son of Mom's Friend.app */;
 			productType = "com.apple.product-type.application";
@@ -164,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 1222CE562AEA22C8003D3DB7;
+			packageReferences = (
+				1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1222CE602AEA22C9003D3DB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,7 +185,6 @@
 			files = (
 				1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */,
 				1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */,
-				1222CE6A2AEA22C9003D3DB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,8 +199,7 @@
 				1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */,
 				1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */,
 				1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */,
-				1222CE952AFB4AD9003D3DB7 /* Splash.swift in Sources */,
-				1222CE652AEA22C9003D3DB7 /* SceneDelegate.swift in Sources */,
+				1222CE952AFB4AD9003D3DB7 /* SplashViewController.swift in Sources */,
 				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
 				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
 				1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */,
@@ -207,14 +210,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1222CE682AEA22C9003D3DB7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1222CE692AEA22C9003D3DB7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -357,7 +352,6 @@
 				INFOPLIST_FILE = "Son of Mom's Friend/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -385,7 +379,6 @@
 				INFOPLIST_FILE = "Son of Mom's Friend/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -423,6 +416,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1222CE982AFB4E47003D3DB7 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		1222CE9A2AFB4E47003D3DB7 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1222CE572AEA22C8003D3DB7 /* Project object */;
 }
