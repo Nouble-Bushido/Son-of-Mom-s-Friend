@@ -5,7 +5,7 @@
 //  Created by Артем Чжен on 26.10.2023.
 //
 
-import UIKit
+import Foundation
 
 struct Celebrity: Codable {
     var id: Int
