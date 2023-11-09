@@ -23,12 +23,18 @@ class SplashViewController: UIViewController {
         label.textAlignment = .center
         label.font = UIFont(name: "Nunito-SemiBold", size: 24)
         label.text = "Здесь тебя ждет сын маминой подруги"
-       return label
+        return label
     }()
+    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkBirhday()
     }
     
     //MARK: Methods
@@ -49,9 +55,35 @@ class SplashViewController: UIViewController {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.centerX.equalToSuperview().offset(10)
+            make.leading.trailing.equalToSuperview().inset(40)
             make.width.equalTo(300)
             make.height.equalTo(60)
         }
+    }
+    
+    private func checkBirhday() {
+        if UserManager.getUserBirthday() != nil {
+            showBirthdayAlert()
+        } else {
+            navigateToMainScreen()
+        }
+    }
+    
+    private func showBirthdayAlert() {
+        let ac = UIAlertController(title: "Введите дату рождения", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Продолжить", style: .default) { [weak self] _ in
+            self?.navigateToMainScreen()}
+        
+        ac.addTextField { textField in
+            textField.placeholder = "ДД.ММ.ГГГГ"
+        }
+        
+        ac.addAction(okAction)
+        present(ac, animated: true)
+    }
+    
+    private func navigateToMainScreen() {
+        let mainScreen = ViewController()
+        present(mainScreen, animated: true)
     }
 }
