@@ -7,6 +7,6 @@
 
 import UIKit
 
-struct User {
+struct User: Codable {
     var dateOfBirth: Date
 }

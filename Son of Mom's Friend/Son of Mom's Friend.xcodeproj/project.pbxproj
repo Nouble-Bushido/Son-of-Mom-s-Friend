@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */; };
-		1222CE672AEA22C9003D3DB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE662AEA22C9003D3DB7 /* ViewController.swift */; };
 		1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */; };
 		1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */; };
 		1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE782AEA5605003D3DB7 /* Celebrity.swift */; };
@@ -17,17 +16,26 @@
 		1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE822AF1F4BF003D3DB7 /* UserManager.swift */; };
 		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
-		1222CE8A2AF8908E003D3DB7 /* Achievement.json in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE882AF8908E003D3DB7 /* Achievement.json */; };
-		1222CE8B2AF8908E003D3DB7 /* Celebrity.json in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE892AF8908E003D3DB7 /* Celebrity.json */; };
 		1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */; };
-		1275D0C62AFCD03D009F622E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1275D0C52AFCD03D009F622E /* SnapKit */; };
-		1275D0C82AFCD03D009F622E /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1275D0C72AFCD03D009F622E /* SnapKit-Dynamic */; };
+		DE3635B82AFD40FE00B42FA2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */; };
+		DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B92AFD410500B42FA2 /* SplashView.swift */; };
+		DE3635BD2AFD415A00B42FA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE3635BF2AFD415A00B42FA2 /* Localizable.strings */; };
+		DE3635C22AFD421800B42FA2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635C12AFD421800B42FA2 /* GradientView.swift */; };
+		DE3635C52AFD424400B42FA2 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635C42AFD424400B42FA2 /* UIColor+Extension.swift */; };
+		DE3635C72AFD426D00B42FA2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635C62AFD426D00B42FA2 /* String+Extension.swift */; };
+		DE3635CA2AFD42AA00B42FA2 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635C92AFD42AA00B42FA2 /* ScreenSize.swift */; };
+		DE3635CC2AFD42C900B42FA2 /* Scalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635CB2AFD42C900B42FA2 /* Scalable.swift */; };
+		DE3635CE2AFD42DD00B42FA2 /* TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635CD2AFD42DD00B42FA2 /* TextAttributes.swift */; };
+		DE3635D52AFD442500B42FA2 /* Nunito-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3635D42AFD440A00B42FA2 /* Nunito-Medium.ttf */; };
+		DE3635D62AFD442500B42FA2 /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3635D32AFD440100B42FA2 /* Nunito-SemiBold.ttf */; };
+		DE3635D72AFD442500B42FA2 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3635D22AFD43FE00B42FA2 /* Nunito-Regular.ttf */; };
+		DE3635D82AFD442500B42FA2 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE3635D12AFD43F700B42FA2 /* Nunito-Bold.ttf */; };
+		DE3635DA2AFD445F00B42FA2 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635D92AFD445F00B42FA2 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1222CE5F2AEA22C9003D3DB7 /* Son of Mom's Friend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Son of Mom's Friend.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1222CE662AEA22C9003D3DB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1222CE6E2AEA22CA003D3DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1222CE702AEA22CA003D3DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,9 +45,21 @@
 		1222CE822AF1F4BF003D3DB7 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
-		1222CE882AF8908E003D3DB7 /* Achievement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Achievement.json; path = ../../../../Achievement.json; sourceTree = "<group>"; };
-		1222CE892AF8908E003D3DB7 /* Celebrity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Celebrity.json; path = ../../../../Celebrity.json; sourceTree = "<group>"; };
 		1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		DE3635B92AFD410500B42FA2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		DE3635BE2AFD415A00B42FA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DE3635C12AFD421800B42FA2 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		DE3635C42AFD424400B42FA2 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		DE3635C62AFD426D00B42FA2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		DE3635C92AFD42AA00B42FA2 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		DE3635CB2AFD42C900B42FA2 /* Scalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scalable.swift; sourceTree = "<group>"; };
+		DE3635CD2AFD42DD00B42FA2 /* TextAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttributes.swift; sourceTree = "<group>"; };
+		DE3635D12AFD43F700B42FA2 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
+		DE3635D22AFD43FE00B42FA2 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		DE3635D32AFD440100B42FA2 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
+		DE3635D42AFD440A00B42FA2 /* Nunito-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Medium.ttf"; sourceTree = "<group>"; };
+		DE3635D92AFD445F00B42FA2 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1275D0C62AFCD03D009F622E /* SnapKit in Frameworks */,
-				1275D0C82AFCD03D009F622E /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +92,8 @@
 		1222CE612AEA22C9003D3DB7 /* Son of Mom's Friend */ = {
 			isa = PBXGroup;
 			children = (
-				1222CE762AEA55B8003D3DB7 /* Service */,
-				1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */,
-				1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */,
-				1222CE702AEA22CA003D3DB7 /* Info.plist */,
-				1222CE882AF8908E003D3DB7 /* Achievement.json */,
-				1222CE892AF8908E003D3DB7 /* Celebrity.json */,
+				DE3635B02AFD3C2D00B42FA2 /* Classes */,
+				DE3635B12AFD3C3100B42FA2 /* Resource */,
 			);
 			path = "Son of Mom's Friend";
 			sourceTree = "<group>";
@@ -87,25 +101,20 @@
 		1222CE762AEA55B8003D3DB7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				1222CE8F2AFB4781003D3DB7 /* Presentation */,
-				1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */,
-				1222CE662AEA22C9003D3DB7 /* ViewController.swift */,
-				1222CE772AEA55CF003D3DB7 /* Models */,
-				1222CE822AF1F4BF003D3DB7 /* UserManager.swift */,
-				1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */,
-				1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */,
+				DE3635B42AFD3D5F00B42FA2 /* Celebrity */,
+				DE3635B22AFD3D4B00B42FA2 /* User */,
+				1222CE772AEA55CF003D3DB7 /* Achievement */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		1222CE772AEA55CF003D3DB7 /* Models */ = {
+		1222CE772AEA55CF003D3DB7 /* Achievement */ = {
 			isa = PBXGroup;
 			children = (
-				1222CE782AEA5605003D3DB7 /* Celebrity.swift */,
-				1222CE7C2AEA6011003D3DB7 /* Achievement.swift */,
-				1222CE7A2AEA5A3E003D3DB7 /* User.swift */,
+				DE3635B62AFD3D7E00B42FA2 /* Model */,
+				1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */,
 			);
-			path = Models;
+			path = Achievement;
 			sourceTree = "<group>";
 		};
 		1222CE8F2AFB4781003D3DB7 /* Presentation */ = {
@@ -119,7 +128,139 @@
 		1222CE922AFB487A003D3DB7 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				DE3635DB2AFD45CB00B42FA2 /* Splash */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		DE3635AF2AFD3C2300B42FA2 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635C82AFD42A000B42FA2 /* Utils */,
+				DE3635C32AFD423300B42FA2 /* Extension */,
+				DE3635C02AFD420D00B42FA2 /* CustomView */,
+				1222CE622AEA22C9003D3DB7 /* AppDelegate.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		DE3635B02AFD3C2D00B42FA2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635AF2AFD3C2300B42FA2 /* Misc */,
+				1222CE762AEA55B8003D3DB7 /* Service */,
+				1222CE8F2AFB4781003D3DB7 /* Presentation */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DE3635B12AFD3C3100B42FA2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635CF2AFD439C00B42FA2 /* Fonts */,
+				1222CE6B2AEA22CA003D3DB7 /* Assets.xcassets */,
+				1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */,
+				1222CE702AEA22CA003D3DB7 /* Info.plist */,
+				DE3635BF2AFD415A00B42FA2 /* Localizable.strings */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DE3635B22AFD3D4B00B42FA2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635B32AFD3D5300B42FA2 /* Model */,
+				1222CE822AF1F4BF003D3DB7 /* UserManager.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		DE3635B32AFD3D5300B42FA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE7A2AEA5A3E003D3DB7 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE3635B42AFD3D5F00B42FA2 /* Celebrity */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635B52AFD3D6500B42FA2 /* Model */,
+				1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */,
+			);
+			path = Celebrity;
+			sourceTree = "<group>";
+		};
+		DE3635B52AFD3D6500B42FA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE782AEA5605003D3DB7 /* Celebrity.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE3635B62AFD3D7E00B42FA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1222CE7C2AEA6011003D3DB7 /* Achievement.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DE3635C02AFD420D00B42FA2 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635C12AFD421800B42FA2 /* GradientView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		DE3635C32AFD423300B42FA2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635C42AFD424400B42FA2 /* UIColor+Extension.swift */,
+				DE3635C62AFD426D00B42FA2 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DE3635C82AFD42A000B42FA2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635C92AFD42AA00B42FA2 /* ScreenSize.swift */,
+				DE3635CB2AFD42C900B42FA2 /* Scalable.swift */,
+				DE3635CD2AFD42DD00B42FA2 /* TextAttributes.swift */,
+				DE3635D92AFD445F00B42FA2 /* Fonts.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE3635CF2AFD439C00B42FA2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635D02AFD43EF00B42FA2 /* Nunito */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DE3635D02AFD43EF00B42FA2 /* Nunito */ = {
+			isa = PBXGroup;
+			children = (
+				DE3635D42AFD440A00B42FA2 /* Nunito-Medium.ttf */,
+				DE3635D32AFD440100B42FA2 /* Nunito-SemiBold.ttf */,
+				DE3635D22AFD43FE00B42FA2 /* Nunito-Regular.ttf */,
+				DE3635D12AFD43F700B42FA2 /* Nunito-Bold.ttf */,
+			);
+			path = Nunito;
+			sourceTree = "<group>";
+		};
+		DE3635DB2AFD45CB00B42FA2 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
 				1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */,
+				DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */,
+				DE3635B92AFD410500B42FA2 /* SplashView.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -141,8 +282,6 @@
 			);
 			name = "Son of Mom's Friend";
 			packageProductDependencies = (
-				1275D0C52AFCD03D009F622E /* SnapKit */,
-				1275D0C72AFCD03D009F622E /* SnapKit-Dynamic */,
 			);
 			productName = "Son of Mom's Friend";
 			productReference = 1222CE5F2AEA22C9003D3DB7 /* Son of Mom's Friend.app */;
@@ -173,7 +312,6 @@
 			);
 			mainGroup = 1222CE562AEA22C8003D3DB7;
 			packageReferences = (
-				1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 1222CE602AEA22C9003D3DB7 /* Products */;
 			projectDirPath = "";
@@ -189,10 +327,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE3635D52AFD442500B42FA2 /* Nunito-Medium.ttf in Resources */,
+				DE3635D62AFD442500B42FA2 /* Nunito-SemiBold.ttf in Resources */,
+				DE3635D72AFD442500B42FA2 /* Nunito-Regular.ttf in Resources */,
+				DE3635D82AFD442500B42FA2 /* Nunito-Bold.ttf in Resources */,
 				1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */,
-				1222CE8A2AF8908E003D3DB7 /* Achievement.json in Resources */,
+				DE3635BD2AFD415A00B42FA2 /* Localizable.strings in Resources */,
 				1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */,
-				1222CE8B2AF8908E003D3DB7 /* Celebrity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,13 +344,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1222CE672AEA22C9003D3DB7 /* ViewController.swift in Sources */,
 				1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */,
 				1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */,
+				DE3635C22AFD421800B42FA2 /* GradientView.swift in Sources */,
+				DE3635C52AFD424400B42FA2 /* UIColor+Extension.swift in Sources */,
+				DE3635CA2AFD42AA00B42FA2 /* ScreenSize.swift in Sources */,
 				1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */,
+				DE3635B82AFD40FE00B42FA2 /* SplashViewModel.swift in Sources */,
+				DE3635DA2AFD445F00B42FA2 /* Fonts.swift in Sources */,
+				DE3635CC2AFD42C900B42FA2 /* Scalable.swift in Sources */,
+				DE3635C72AFD426D00B42FA2 /* String+Extension.swift in Sources */,
 				1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */,
 				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
+				DE3635CE2AFD42DD00B42FA2 /* TextAttributes.swift in Sources */,
 				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
+				DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */,
 				1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */,
 				1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */,
 			);
@@ -224,6 +373,14 @@
 				1222CE6E2AEA22CA003D3DB7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DE3635BF2AFD415A00B42FA2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE3635BE2AFD415A00B42FA2 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -360,18 +517,22 @@
 				INFOPLIST_FILE = "Son of Mom's Friend/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Artem.Son-of-Mom-s-Friend";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -387,18 +548,22 @@
 				INFOPLIST_FILE = "Son of Mom's Friend/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Artem.Son-of-Mom-s-Friend";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -424,30 +589,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1275D0C52AFCD03D009F622E /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		1275D0C72AFCD03D009F622E /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1222CE572AEA22C8003D3DB7 /* Project object */;
 }

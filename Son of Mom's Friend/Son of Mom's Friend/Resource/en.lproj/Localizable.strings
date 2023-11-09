@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Son of Mom's Friend
+
+  Created by Андрей Чернышев on 09.11.2023.
+  
+*/
+
+// MARK: Splash
+"Splash.Text" = "Здесь тебя ждет сын маминой подруги";
