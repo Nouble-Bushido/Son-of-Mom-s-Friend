@@ -19,7 +19,9 @@
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
 		1222CE8A2AF8908E003D3DB7 /* Achievement.json in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE882AF8908E003D3DB7 /* Achievement.json */; };
 		1222CE8B2AF8908E003D3DB7 /* Celebrity.json in Resources */ = {isa = PBXBuildFile; fileRef = 1222CE892AF8908E003D3DB7 /* Celebrity.json */; };
-		1222CE912AFB47B7003D3DB7 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE902AFB47B7003D3DB7 /* Splash.swift */; };
+		1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */; };
+		1275D0C62AFCD03D009F622E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1275D0C52AFCD03D009F622E /* SnapKit */; };
+		1275D0C82AFCD03D009F622E /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1275D0C72AFCD03D009F622E /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +39,7 @@
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		1222CE882AF8908E003D3DB7 /* Achievement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Achievement.json; path = ../../../../Achievement.json; sourceTree = "<group>"; };
 		1222CE892AF8908E003D3DB7 /* Celebrity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Celebrity.json; path = ../../../../Celebrity.json; sourceTree = "<group>"; };
-		1222CE902AFB47B7003D3DB7 /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
+		1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1222CE992AFB4E47003D3DB7 /* SnapKit in Frameworks */,
-				1222CE9B2AFB4E47003D3DB7 /* SnapKit-Dynamic in Frameworks */,
+				1275D0C62AFCD03D009F622E /* SnapKit in Frameworks */,
+				1275D0C82AFCD03D009F622E /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +119,7 @@
 		1222CE922AFB487A003D3DB7 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				1222CE902AFB47B7003D3DB7 /* Splash.swift */,
+				1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -139,6 +141,8 @@
 			);
 			name = "Son of Mom's Friend";
 			packageProductDependencies = (
+				1275D0C52AFCD03D009F622E /* SnapKit */,
+				1275D0C72AFCD03D009F622E /* SnapKit-Dynamic */,
 			);
 			productName = "Son of Mom's Friend";
 			productReference = 1222CE5F2AEA22C9003D3DB7 /* Son of Mom's Friend.app */;
@@ -169,6 +173,7 @@
 			);
 			mainGroup = 1222CE562AEA22C8003D3DB7;
 			packageReferences = (
+				1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 1222CE602AEA22C9003D3DB7 /* Products */;
 			projectDirPath = "";
@@ -187,7 +192,6 @@
 				1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */,
 				1222CE8A2AF8908E003D3DB7 /* Achievement.json in Resources */,
 				1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */,
-				1222CE6A2AEA22C9003D3DB7 /* Main.storyboard in Resources */,
 				1222CE8B2AF8908E003D3DB7 /* Celebrity.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -203,8 +207,7 @@
 				1222CE632AEA22C9003D3DB7 /* AppDelegate.swift in Sources */,
 				1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */,
 				1222CE832AF1F4BF003D3DB7 /* UserManager.swift in Sources */,
-				1222CE912AFB47B7003D3DB7 /* Splash.swift in Sources */,
-				1222CE652AEA22C9003D3DB7 /* SceneDelegate.swift in Sources */,
+				1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */,
 				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
 				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
 				1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */,
@@ -423,7 +426,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -434,14 +437,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1222CE982AFB4E47003D3DB7 /* SnapKit */ = {
+		1275D0C52AFCD03D009F622E /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		1222CE9A2AFB4E47003D3DB7 /* SnapKit-Dynamic */ = {
+		1275D0C72AFCD03D009F622E /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1222CE972AFB4E47003D3DB7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 1275D0C42AFCD03D009F622E /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
