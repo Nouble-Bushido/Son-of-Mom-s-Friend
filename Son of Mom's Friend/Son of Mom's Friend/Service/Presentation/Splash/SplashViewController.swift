@@ -62,7 +62,7 @@ class SplashViewController: UIViewController {
     }
     
     private func checkBirhday() {
-        if UserManager.getUserBirthday() != nil {
+        if UserManager.getUserBirthday() == nil {
             showBirthdayAlert()
         } else {
             navigateToMainScreen()
