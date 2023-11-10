@@ -17,6 +17,8 @@
 		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
 		1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */; };
+		1275D0CB2AFDC849009F622E /* Achievement.json in Resources */ = {isa = PBXBuildFile; fileRef = 1275D0C92AFDC849009F622E /* Achievement.json */; };
+		1275D0CC2AFDC849009F622E /* Celebrity.json in Resources */ = {isa = PBXBuildFile; fileRef = 1275D0CA2AFDC849009F622E /* Celebrity.json */; };
 		DE3635B82AFD40FE00B42FA2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */; };
 		DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B92AFD410500B42FA2 /* SplashView.swift */; };
 		DE3635BD2AFD415A00B42FA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE3635BF2AFD415A00B42FA2 /* Localizable.strings */; };
@@ -46,6 +48,8 @@
 		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1275D0C92AFDC849009F622E /* Achievement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Achievement.json; sourceTree = "<group>"; };
+		1275D0CA2AFDC849009F622E /* Celebrity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celebrity.json; sourceTree = "<group>"; };
 		DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DE3635B92AFD410500B42FA2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE3635BE2AFD415A00B42FA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 				1222CE6D2AEA22CA003D3DB7 /* LaunchScreen.storyboard */,
 				1222CE702AEA22CA003D3DB7 /* Info.plist */,
 				DE3635BF2AFD415A00B42FA2 /* Localizable.strings */,
+				1275D0CA2AFDC849009F622E /* Celebrity.json */,
+				1275D0C92AFDC849009F622E /* Achievement.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -328,9 +334,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE3635D52AFD442500B42FA2 /* Nunito-Medium.ttf in Resources */,
+				1275D0CB2AFDC849009F622E /* Achievement.json in Resources */,
 				DE3635D62AFD442500B42FA2 /* Nunito-SemiBold.ttf in Resources */,
 				DE3635D72AFD442500B42FA2 /* Nunito-Regular.ttf in Resources */,
 				DE3635D82AFD442500B42FA2 /* Nunito-Bold.ttf in Resources */,
+				1275D0CC2AFDC849009F622E /* Celebrity.json in Resources */,
 				1222CE6F2AEA22CA003D3DB7 /* LaunchScreen.storyboard in Resources */,
 				DE3635BD2AFD415A00B42FA2 /* Localizable.strings in Resources */,
 				1222CE6C2AEA22CA003D3DB7 /* Assets.xcassets in Resources */,
