@@ -18,10 +18,12 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         if let window = window {
-            window.rootViewController = SplashViewController.make()
+            let splashVC = SplashViewController.make()
+            window.rootViewController = splashVC
             window.makeKeyAndVisible()
         }
         
         return true
     }
 }
+

@@ -41,11 +41,17 @@ private extension SplashViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 switch route {
                 case .requestBirthdate:
-                    break // TODO: open vc with dialog
+                    self.presentBirthdayRequest()
                 case .main:
                     break // TODO: set main controller as root
                 }
             }
         }
+    }
+    
+    func presentBirthdayRequest() {
+        let vc = BirthdateRequestViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
 }
