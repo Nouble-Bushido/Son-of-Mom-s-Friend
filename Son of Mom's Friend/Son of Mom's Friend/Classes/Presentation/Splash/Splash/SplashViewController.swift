@@ -38,7 +38,8 @@ extension SplashViewController {
 private extension SplashViewController {
     var route: (SplashViewModel.Route) -> Void {
         { route in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                guard let self = self else { return }
                 switch route {
                 case .requestBirthdate:
                     self.presentBirthdayRequest()
