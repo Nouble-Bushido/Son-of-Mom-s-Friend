@@ -6,3 +6,10 @@
 //
 
 import UIKit
+
+final class BirthdayModel {
+}
+
+extension BirthdayModel {
+    
+}

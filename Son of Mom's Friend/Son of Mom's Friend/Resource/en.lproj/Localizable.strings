@@ -9,6 +9,8 @@
 // MARK: Splash
 "Splash.Text" = "Здесь тебя ждет сын маминой подруги";
 
-// TODO: BirthdateRequest
-"BirthdateRequest.Title.Text" = "Введите свою дату рождения, чтобы приложение ...";
+// MARK: BirthdateRequest
+"BirthdateRequest.Title.Text" = "Введите свою дату рождения, чтобы приложение Pulvinar vulputate nunc ullamcorper tristique sapien dictum.";
+"BirthdateRequest.Birthday.Text" = "Дата рождения";
 "BirthdateRequest.Continue.Text" = "Продолжить";
+

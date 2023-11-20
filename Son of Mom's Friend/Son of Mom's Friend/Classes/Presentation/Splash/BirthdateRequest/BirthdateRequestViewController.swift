@@ -7,82 +7,50 @@
 
 import UIKit
 
-class BirthdateRequestViewController: UIViewController {
-    let datePicker = UIDatePicker()
-    let userManager = UserManager()
+final class BirthdateRequestViewController: UIViewController, UITextFieldDelegate {
+    lazy var birthDayView = BirthdayView()
     
-    var imageView: UIImageView = {
-        var view = UIImageView()
-        
-        let  image = UIImage(named: "Calendar.Image") ?? UIImage()
-        let maxWidth: CGFloat = 30
-        
-        view = UIImageView(image: image)
-        view.contentMode = .scaleAspectFit
-        view.clipsToBounds = true
-        view.widthAnchor.constraint(lessThanOrEqualToConstant: maxWidth).isActive = true
-        return view
-    }()
+    private lazy var viewModel = BirthdayModel()
     
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yy"
-        return formatter
-    }()
+    override func loadView() {
+        view = birthDayView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .clear
-        createDatePicker()
+        birthDayView.birthDayTextField.delegate = self
+        setupDatePickerInput()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        showAC()
-    }
-    
-    func showAC() {
-        let ac = UIAlertController(title: "BirthdateRequest.Title.Text".localized, message: nil, preferredStyle: .alert)
-        ac.view.translatesAutoresizingMaskIntoConstraints = false
-        ac.addTextField { textField in
-            textField.placeholder = "DD.MM.YY"
-            textField.borderStyle = .roundedRect
-            textField.rightView =  self.imageView
-            textField.rightViewMode = .always
-            textField.inputView = self.datePicker
-            textField.inputAccessoryView = self.createToolBar()
+}
+
+//MARK: TextFieldDelegate
+extension BirthdateRequestViewController {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == birthDayView.birthDayTextField {
+            
         }
+    }
+}
+
+//MARK: DatePicker Setup
+extension BirthdateRequestViewController {
+    func setupDatePickerInput() {
+        birthDayView.birthDayTextField.inputAccessoryView = birthDayView.toolBar
+        birthDayView.datePicker.preferredDatePickerStyle = .wheels
+        birthDayView.datePicker.datePickerMode = .date
+        birthDayView.birthDayTextField.inputView = birthDayView.datePicker
         
-        let okAction = UIAlertAction(title: "BirthdateRequest.Continue.Text".localized, style: .default) { [weak self] _ in
-            guard let selectedDate = self?.datePicker.date else { return }
-            let user = User(dateOfBirth: selectedDate)
-            self?.userManager.set(user: user)
-        }
-        
-        ac.addAction(okAction)
-        present(ac, animated: true)
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pressDoneBtn))
+        birthDayView.toolBar.setItems([doneBtn], animated: true)
     }
     
-    func createToolBar() -> UIToolbar {
-        let toolBar = UIToolbar()
-        toolBar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(donePressed))
-        toolBar.setItems([doneButton], animated: true)
-        
-        return toolBar
-    }
-    
-    func createDatePicker() {
-        datePicker.preferredDatePickerStyle = .wheels
-        datePicker.datePickerMode = .date
-    }
-    
-    @objc func donePressed() {
-        view.endEditing(true)
-        guard let ac = presentedViewController as? UIAlertController,
-              let textField = ac.textFields?.first else { return }
-        textField.text = dateFormatter.string(from: datePicker.date)
-        textField.resignFirstResponder()
+// MARK: - Actions
+    @objc func pressDoneBtn() {
+        let formater = DateFormatter()
+             formater.dateStyle = .medium
+             formater.timeStyle = .none
+     
+        birthDayView.birthDayTextField.text = formater.string(from: birthDayView.datePicker.date)
+        birthDayView.birthDayTextField.resignFirstResponder()
     }
 }
