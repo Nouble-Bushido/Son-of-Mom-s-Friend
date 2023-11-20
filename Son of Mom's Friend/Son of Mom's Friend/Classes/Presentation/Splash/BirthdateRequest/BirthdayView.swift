@@ -16,7 +16,6 @@ final class BirthdayView: UIView {
     lazy var continueButton = makeContinueButton()
     lazy var toolBar = makeToolBar()
     lazy var datePicker = makeDatePicker()
-    let birthDayController = BirthdateRequestViewController()
     
     override init(frame: CGRect) {
         super .init(frame: frame)
@@ -153,7 +152,6 @@ private extension BirthdayView {
     
     func makeDatePicker() -> UIDatePicker {
         let datePicker = UIDatePicker()
-        
         return datePicker
     }
 }
