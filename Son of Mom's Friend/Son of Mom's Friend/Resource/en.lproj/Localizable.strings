@@ -12,5 +12,6 @@
 // MARK: BirthdateRequest
 "BirthdateRequest.Title.Text" = "Введите свою дату рождения, чтобы приложение Pulvinar vulputate nunc ullamcorper tristique sapien dictum.";
 "BirthdateRequest.Birthday.Text" = "Дата рождения";
+"BirthdateRequest.DateFormat.Text" = "ДД.ММ.ГГ";
 "BirthdateRequest.Continue.Text" = "Продолжить";
 

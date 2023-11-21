@@ -54,6 +54,11 @@ private extension BirthdayView {
         ])
         
         NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 30),
+            imageView.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
             birthDayTextField.widthAnchor.constraint(equalToConstant: 311.scale),
             birthDayTextField.heightAnchor.constraint(equalToConstant: 48.scale),
             birthDayTextField.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 5),
@@ -113,8 +118,9 @@ private extension BirthdayView {
     }
     
     func makeImageView() -> UIImageView {
-        let imageView = UIImageView(image: UIImage(named: "Calendar.Image"))
+        let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "Calendar.Image")
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(imageView)

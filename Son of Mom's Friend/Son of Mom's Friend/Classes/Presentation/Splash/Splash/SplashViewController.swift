@@ -44,7 +44,7 @@ private extension SplashViewController {
                 case .requestBirthdate:
                     self.presentBirthdayRequest()
                 case .main:
-                    break // TODO: set main controller as root
+                    self.presentMain()
                 }
             }
         }
@@ -52,6 +52,12 @@ private extension SplashViewController {
     
     func presentBirthdayRequest() {
         let vc = BirthdateRequestViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
+    }
+    
+    func presentMain() {
+        let vc = MainViewCountroller()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
