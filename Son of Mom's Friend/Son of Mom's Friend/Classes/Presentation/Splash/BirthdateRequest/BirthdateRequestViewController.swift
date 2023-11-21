@@ -8,9 +8,15 @@
 import UIKit
 
 final class BirthdateRequestViewController: UIViewController, UITextFieldDelegate {
-    lazy var birthDayView = BirthdayView()
-    
+    private lazy var birthDayView = BirthdayView()
     private lazy var viewModel = BirthdayModel()
+    
+    private let formater: DateFormatter = {
+        let formater = DateFormatter()
+        formater.dateStyle = .medium
+        formater.timeStyle = .none
+        return formater
+    }()
     
     override func loadView() {
         view = birthDayView
@@ -19,6 +25,7 @@ final class BirthdateRequestViewController: UIViewController, UITextFieldDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         birthDayView.birthDayTextField.delegate = self
+        actionContinueButton()
         setupDatePickerInput()
     }
 }
@@ -33,7 +40,7 @@ extension BirthdateRequestViewController {
 }
 
 //MARK: DatePicker Setup
-extension BirthdateRequestViewController {
+private extension BirthdateRequestViewController {
     func setupDatePickerInput() {
         birthDayView.birthDayTextField.inputAccessoryView = birthDayView.toolBar
         birthDayView.datePicker.preferredDatePickerStyle = .wheels
@@ -46,11 +53,17 @@ extension BirthdateRequestViewController {
     
 // MARK: - Actions
     @objc func pressDoneBtn() {
-        let formater = DateFormatter()
-             formater.dateStyle = .medium
-             formater.timeStyle = .none
-     
         birthDayView.birthDayTextField.text = formater.string(from: birthDayView.datePicker.date)
         birthDayView.birthDayTextField.resignFirstResponder()
+    }
+    
+    func actionContinueButton() {
+        birthDayView.continueButton.addTarget(self, action: #selector(pressContinue), for: .touchUpInside)
+    }
+    
+    @objc func pressContinue() {
+        let vc = MainViewCountroller()
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
 }

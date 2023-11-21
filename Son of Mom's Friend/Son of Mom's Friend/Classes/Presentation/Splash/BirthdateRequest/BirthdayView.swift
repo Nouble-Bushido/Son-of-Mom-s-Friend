@@ -123,7 +123,7 @@ private extension BirthdayView {
     
     func makeBirthDayTextField() -> UITextField {
         let textField = UITextField()
-        textField.placeholder = "DD.MM.YY"
+        textField.placeholder = "BirthdateRequest.DateFormat.Text".localized
         textField.borderStyle = .roundedRect
         textField.layer.cornerRadius = 12
         textField.rightView = imageView
@@ -138,7 +138,6 @@ private extension BirthdayView {
         button.setTitle("BirthdateRequest.Continue.Text".localized, for: .normal)
         button.backgroundColor = UIColor.blue
         button.layer.cornerRadius = 12
-//        button.addTarget(self, action: #selector(pressButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         addSubview(button)
         return button
