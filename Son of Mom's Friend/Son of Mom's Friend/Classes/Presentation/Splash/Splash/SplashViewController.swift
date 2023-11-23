@@ -11,6 +11,7 @@ final class SplashViewController: UIViewController {
     lazy var mainView = SplashView()
     
     private lazy var viewModel = SplashViewModel()
+    private let userManager = UserManager()
     
     override func loadView() {
         view = mainView
@@ -53,12 +54,17 @@ private extension SplashViewController {
     func presentBirthdayRequest() {
         let vc = BirthdateRequestViewController()
         vc.modalPresentationStyle = .overFullScreen
+        vc.onContinue = { [weak self] selectedDate in
+            let user = User(dateOfBirth: selectedDate)
+            self?.userManager.set(user: user)
+            self?.presentMain()
+        }
         present(vc, animated: true)
     }
     
     func presentMain() {
         let vc = MainViewCountroller()
         vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

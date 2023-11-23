@@ -20,7 +20,7 @@ final class BirthdayView: UIView {
     override init(frame: CGRect) {
         super .init(frame: frame)
         
-        makeconstraints()
+        makeСonstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -28,10 +28,9 @@ final class BirthdayView: UIView {
     }
 }
 
-// MARK: Private
 // MARK: Make constraints
 private extension BirthdayView {
-    func makeconstraints() {
+    func makeСonstraints() {
         NSLayoutConstraint.activate([
             whiteBackgroundView.centerXAnchor.constraint(equalTo: centerXAnchor),
             whiteBackgroundView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -18),
@@ -40,36 +39,36 @@ private extension BirthdayView {
         ])
         
         NSLayoutConstraint.activate([
-            titleLabel.widthAnchor.constraint(equalToConstant: 302.scale),
-            titleLabel.heightAnchor.constraint(equalToConstant: 56.scale),
+            titleLabel.leadingAnchor.constraint(equalTo: whiteBackgroundView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: whiteBackgroundView.trailingAnchor, constant: -30),
             titleLabel.topAnchor.constraint(equalTo: whiteBackgroundView.topAnchor, constant: 10),
             titleLabel.centerXAnchor.constraint(equalTo: whiteBackgroundView.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            birthdayLabel.widthAnchor.constraint(equalToConstant: 302.scale),
-            birthdayLabel.heightAnchor.constraint(equalToConstant: 22.scale),
-            birthdayLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            birthdayLabel.leadingAnchor.constraint(equalTo: whiteBackgroundView.leadingAnchor, constant: 20),
+            birthdayLabel.trailingAnchor.constraint(equalTo: whiteBackgroundView.trailingAnchor, constant: -30),
+            birthdayLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             birthdayLabel.centerXAnchor.constraint(equalTo: whiteBackgroundView.centerXAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 30),
-            imageView.heightAnchor.constraint(equalToConstant: 30)
+            imageView.widthAnchor.constraint(equalToConstant: 25),
+            imageView.heightAnchor.constraint(equalToConstant: 25)
         ])
         
         NSLayoutConstraint.activate([
-            birthDayTextField.widthAnchor.constraint(equalToConstant: 311.scale),
+            birthDayTextField.leadingAnchor.constraint(equalTo: whiteBackgroundView.leadingAnchor, constant: 20),
+            birthDayTextField.trailingAnchor.constraint(equalTo: whiteBackgroundView.trailingAnchor, constant: -15),
             birthDayTextField.heightAnchor.constraint(equalToConstant: 48.scale),
-            birthDayTextField.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 5),
-            birthDayTextField.centerXAnchor.constraint(equalTo: whiteBackgroundView.centerXAnchor)
+            birthDayTextField.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 5)
         ])
         
         NSLayoutConstraint.activate([
-            continueButton.widthAnchor.constraint(equalToConstant: 311.scale),
-            continueButton.heightAnchor.constraint(equalToConstant: 48.scale),
-            continueButton.topAnchor.constraint(equalTo: birthDayTextField.bottomAnchor, constant: 30),
-            continueButton.centerXAnchor.constraint(equalTo: whiteBackgroundView.centerXAnchor)
+            continueButton.leadingAnchor.constraint(equalTo: whiteBackgroundView.leadingAnchor, constant: 20),
+            continueButton.trailingAnchor.constraint(equalTo: whiteBackgroundView.trailingAnchor, constant: -15),
+            continueButton.bottomAnchor.constraint(equalTo: whiteBackgroundView.bottomAnchor, constant: -20),
+            continueButton.topAnchor.constraint(equalTo: birthDayTextField.bottomAnchor, constant: 20)
         ])
     }
 }
@@ -88,7 +87,7 @@ private extension BirthdayView {
     func makeTitleLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
-            .font(Fonts.Nunito.semiBold(size: 14))
+            .font(Fonts.Nunito.regular(size: 14))
             .lineHeight(18.scale)
             .textAlignment(.left)
             .letterSpacing(-0.39.scale)
@@ -104,7 +103,7 @@ private extension BirthdayView {
     func makeBirthdayLabel() -> UILabel {
         let attrs = TextAttributes()
             .textColor(UIColor.black)
-            .font(Fonts.Nunito.semiBold(size: 17))
+            .font(Fonts.Nunito.regular(size: 17))
             .lineHeight(28.scale)
             .textAlignment(.left)
             .letterSpacing(-0.41.scale)
@@ -128,20 +127,38 @@ private extension BirthdayView {
     }
     
     func makeBirthDayTextField() -> UITextField {
+        let attrs = TextAttributes()
+            .textColor(UIColor.gray)
+            .font(Fonts.Nunito.regular(size: 17))
+            .lineHeight(24.scale)
+            .textAlignment(.left)
+            .letterSpacing(-0.41.scale)
+        
         let textField = UITextField()
-        textField.placeholder = "BirthdateRequest.DateFormat.Text".localized
-        textField.borderStyle = .roundedRect
+        textField.attributedPlaceholder = "BirthdateRequest.DateFormat.Text".localized.attributed(with: attrs)
+        textField.defaultTextAttributes = attrs.dictionary
+        textField.borderStyle = .none
         textField.layer.cornerRadius = 12
+        textField.backgroundColor = .systemGray6
         textField.rightView = imageView
         textField.rightViewMode = .always
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 30))
+        textField.leftViewMode = .always
         textField.translatesAutoresizingMaskIntoConstraints = false
         addSubview(textField)
         return textField
     }
     
     func makeContinueButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.Nunito.medium(size: 17))
+            .lineHeight(28.scale)
+            .textAlignment(.center)
+            .letterSpacing(-0.41.scale)
+        
         let button = UIButton()
-        button.setTitle("BirthdateRequest.Continue.Text".localized, for: .normal)
+        button.setAttributedTitle("BirthdateRequest.Continue.Text".localized.attributed(with: attrs), for: .normal )
         button.backgroundColor = UIColor.blue
         button.layer.cornerRadius = 12
         button.translatesAutoresizingMaskIntoConstraints = false

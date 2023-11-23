@@ -12,6 +12,8 @@ final class MainViewCountroller: UIViewController {
     
     override func loadView() {
         super.loadView()
+        
         view = mainView
+        navigationItem.setHidesBackButton(true, animated: false)
     }
 }

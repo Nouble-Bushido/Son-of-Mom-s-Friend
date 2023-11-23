@@ -10,6 +10,7 @@ import UIKit
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var navigationController: UINavigationController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         CelebrityManager.configure()
@@ -19,7 +20,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = window {
             let splashVC = SplashViewController.make()
-            window.rootViewController = splashVC
+            navigationController = UINavigationController(rootViewController: splashVC)
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
         

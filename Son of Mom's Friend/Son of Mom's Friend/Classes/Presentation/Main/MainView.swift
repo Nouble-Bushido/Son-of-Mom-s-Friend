@@ -21,7 +21,6 @@ final class MainView: UIView {
     }
 }
 
-// MARK: Private
 // MARK: Make constraints
 private extension MainView {
     func makeCounstraints() {

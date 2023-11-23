@@ -9,7 +9,7 @@ import UIKit
 
 final class BirthdateRequestViewController: UIViewController, UITextFieldDelegate {
     private lazy var birthDayView = BirthdayView()
-    private lazy var viewModel = BirthdayModel()
+    var onContinue: ((Date) -> Void?)?
     
     private let formater: DateFormatter = {
         let formater = DateFormatter()
@@ -20,22 +20,15 @@ final class BirthdateRequestViewController: UIViewController, UITextFieldDelegat
     
     override func loadView() {
         view = birthDayView
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         birthDayView.birthDayTextField.delegate = self
         actionContinueButton()
         setupDatePickerInput()
-    }
-}
-
-//MARK: TextFieldDelegate
-extension BirthdateRequestViewController {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if textField == birthDayView.birthDayTextField {
-            
-        }
     }
 }
 
@@ -47,23 +40,31 @@ private extension BirthdateRequestViewController {
         birthDayView.datePicker.datePickerMode = .date
         birthDayView.birthDayTextField.inputView = birthDayView.datePicker
         
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pressDoneBtn))
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(pressDoneButton))
         birthDayView.toolBar.setItems([doneBtn], animated: true)
     }
     
 // MARK: - Actions
-    @objc func pressDoneBtn() {
+    @objc func pressDoneButton() {
         birthDayView.birthDayTextField.text = formater.string(from: birthDayView.datePicker.date)
         birthDayView.birthDayTextField.resignFirstResponder()
     }
     
     func actionContinueButton() {
-        birthDayView.continueButton.addTarget(self, action: #selector(pressContinue), for: .touchUpInside)
+        birthDayView.continueButton.addTarget(self, action: #selector(pressContinueButton), for: .touchUpInside)
     }
     
-    @objc func pressContinue() {
-        let vc = MainViewCountroller()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
+    @objc func pressContinueButton() {
+        guard let selectedDate = formater.date(from: birthDayView.birthDayTextField.text ?? "") else { return }
+        
+        onContinue?(selectedDate)
+        dismiss(animated: true)
+    }
+}
+
+// MARK: - TextFieldDelegate
+extension BirthdateRequestViewController {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return false
     }
 }
