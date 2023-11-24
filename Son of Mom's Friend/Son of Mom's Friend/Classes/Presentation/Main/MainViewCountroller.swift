@@ -14,6 +14,5 @@ final class MainViewCountroller: UIViewController {
         super.loadView()
         
         view = mainView
-        navigationItem.setHidesBackButton(true, animated: false)
     }
 }
