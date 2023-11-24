@@ -11,6 +11,7 @@ final class SplashViewController: UIViewController {
     lazy var mainView = SplashView()
     
     private lazy var viewModel = SplashViewModel()
+    private let userManager = UserManager()
     
     override func loadView() {
         view = mainView
@@ -38,14 +39,32 @@ extension SplashViewController {
 private extension SplashViewController {
     var route: (SplashViewModel.Route) -> Void {
         { route in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+                guard let self = self else { return }
                 switch route {
                 case .requestBirthdate:
-                    break // TODO: open vc with dialog
+                    self.presentBirthdayRequest()
                 case .main:
-                    break // TODO: set main controller as root
+                    self.presentMain()
                 }
             }
         }
+    }
+    
+    func presentBirthdayRequest() {
+        let vc = BirthdateRequestViewController()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.onContinue = { [weak self] selectedDate in
+            let user = User(dateOfBirth: selectedDate)
+            self?.userManager.set(user: user)
+            self?.presentMain()
+        }
+        present(vc, animated: true)
+    }
+    
+    func presentMain() {
+        let vc = MainViewCountroller()
+        vc.modalPresentationStyle = .overFullScreen
+        UIApplication.shared.keyWindow?.rootViewController = vc
     }
 }
