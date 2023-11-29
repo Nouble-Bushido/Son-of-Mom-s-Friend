@@ -23,6 +23,8 @@ final class SplashViewController: UIViewController {
         viewModel.configure(input: SplashViewModel.Input(
             route: route
         ))
+        let output = SplashViewModel.Output(userDidSelectDate: selectDate)
+        viewModel.configure(output: output)
     }
 }
 
@@ -51,12 +53,17 @@ private extension SplashViewController {
         }
     }
     
+    var selectDate: (Date) -> Void {
+        let dateClosure: (Date) -> Void = { [weak self] date in
+            self?.viewModel.userDidSelectDate(date)
+        }
+        return dateClosure
+    }
+    
     func presentBirthdayRequest() {
         let vc = BirthdateRequestViewController()
         vc.modalPresentationStyle = .overFullScreen
-        vc.onContinue = { [weak self] selectedDate in
-            let user = User(dateOfBirth: selectedDate)
-            self?.userManager.set(user: user)
+        vc.onContinue = { [weak self] _ in
             self?.presentMain()
         }
         present(vc, animated: true)

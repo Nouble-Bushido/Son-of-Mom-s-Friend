@@ -9,6 +9,7 @@ import UIKit
 
 final class BirthdateRequestViewController: UIViewController, UITextFieldDelegate {
     private lazy var mainView = BirthdayView()
+    private let viewModel = SplashViewModel()
     var onContinue: ((Date) -> Void?)?
     
     private let formater: DateFormatter = {
@@ -55,6 +56,7 @@ private extension BirthdateRequestViewController {
     
     @objc func pressContinueButton() {
        let date = mainView.datePicker.date
+        viewModel.userDidSelectDate(date)
         dismiss(animated: true) { [weak self] in
                self?.onContinue?(date)
         }

@@ -4,12 +4,14 @@
 //
 //  Created by Андрей Чернышев on 09.11.2023.
 //
+import UIKit
 
 final class SplashViewModel {
     enum Route {
         case requestBirthdate, main
     }
-    
+    var output: Output?
+    var input: Input?
     private lazy var userManager = UserManager()
 }
 
@@ -21,6 +23,22 @@ extension SplashViewModel {
     
     func configure(input: Input) {
         input.route(makeRoute())
+    }
+}
+
+extension SplashViewModel {
+    struct Output {
+        var userDidSelectDate: (Date) -> Void
+    }
+    
+    func configure(output: Output) {
+        self.output = output
+    }
+    
+    func userDidSelectDate(_ date: Date) {
+        let user = User(dateOfBirth: date)
+        userManager.set(user: user)
+        input?.route(.main)
     }
 }
 
