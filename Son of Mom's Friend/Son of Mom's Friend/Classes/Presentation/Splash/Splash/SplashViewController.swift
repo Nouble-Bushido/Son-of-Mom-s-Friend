@@ -11,7 +11,7 @@ final class SplashViewController: UIViewController {
     lazy var mainView = SplashView()
     
     private lazy var viewModel = SplashViewModel()
-    var userDidSelectDate: ((Date) -> Void)?
+    private var userDidSelectDate: ((Date) -> Void)?
     
     override func loadView() {
         view = mainView
