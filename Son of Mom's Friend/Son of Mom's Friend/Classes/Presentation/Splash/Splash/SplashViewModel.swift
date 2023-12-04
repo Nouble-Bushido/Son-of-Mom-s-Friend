@@ -10,8 +10,7 @@ final class SplashViewModel {
     enum Route {
         case requestBirthdate, main
     }
-    var output: Output?
-    var input: Input?
+
     private lazy var userManager = UserManager()
 }
 
@@ -21,24 +20,23 @@ extension SplashViewModel {
         let route: (Route) -> Void
     }
     
-    func configure(input: Input) {
+    func configure(input: Input) -> Output {
         input.route(makeRoute())
+        var userDidSelectDate: (Date) -> Void {
+            { [weak self] date in
+                let user = User(dateOfBirth: date)
+                self?.userManager.set(user: user)
+                input.route(.main)
+            }
+        }
+        
+        return  Output(userDidSelectDate: userDidSelectDate)
     }
 }
 
 extension SplashViewModel {
     struct Output {
         var userDidSelectDate: (Date) -> Void
-    }
-    
-    func configure(output: Output) {
-        self.output = output
-    }
-    
-    func userDidSelectDate(_ date: Date) {
-        let user = User(dateOfBirth: date)
-        userManager.set(user: user)
-        input?.route(.main)
     }
 }
 
