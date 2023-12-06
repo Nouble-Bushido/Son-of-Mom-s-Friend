@@ -15,7 +15,7 @@ final class CelebrityManager {
 
 // MARK: Public
 extension CelebrityManager {
-    static func configure() {
+        static func configure() {
         guard
             UserDefaults.standard.data(forKey: Constants.celebrities) == nil,
             let url = Bundle.main.url(forResource: "Celebrity", withExtension: "json"),
@@ -23,7 +23,6 @@ extension CelebrityManager {
         else {
             return
         }
-        
         UserDefaults.standard.set(data, forKey: Constants.celebrities)
     }
     

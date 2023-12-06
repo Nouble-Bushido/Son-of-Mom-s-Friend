@@ -23,7 +23,6 @@ extension AchievementManager {
         else {
             return
         }
-        
         UserDefaults.standard.set(data, forKey: Constants.achievements)
     }
     

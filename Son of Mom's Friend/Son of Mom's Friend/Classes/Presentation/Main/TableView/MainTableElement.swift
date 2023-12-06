@@ -8,11 +8,6 @@
 import Foundation
 
 enum MainTableElement {
-    case text(String)
-    case author(Author)
-}
-
-struct Author {
-    let name: String
-    let age: Int
+    case dateBirthday([Celebrity])
+    case achievement([Achievement])
 }
