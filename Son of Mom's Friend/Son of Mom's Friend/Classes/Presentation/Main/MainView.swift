@@ -61,11 +61,11 @@ private extension MainView {
     func makeViewColor() -> GradientView {
         let view = GradientView()
         view.gradientLayer.colors = [
-            UIColor(integralRed: 28.scale, green: 55.scale, blue: 209.scale).cgColor,
-            UIColor(integralRed: 91.scale, green: 110.scale, blue: 222.scale).cgColor
+            UIColor(integralRed: 28, green: 55, blue: 209).cgColor,
+            UIColor(integralRed: 91, green: 110, blue: 222).cgColor
         ]
-        view.gradientLayer.startPoint = CGPoint(x: 0.scale, y: 0.scale)
-        view.gradientLayer.endPoint = CGPoint(x: 1.scale, y: 1.scale)
+        view.gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        view.gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
@@ -85,7 +85,7 @@ private extension MainView {
     
     func makeLabelToday() -> UILabel {
         let attrs = TextAttributes()
-            .textColor(UIColor(red: 1.scale, green: 1.scale, blue: 1.scale, alpha: 1.scale))
+            .textColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1))
             .font(Fonts.Nunito.bold(size: 20.scale))
             .lineHeight(22.scale)
             .textAlignment(.center)
@@ -118,7 +118,6 @@ private extension MainView {
     func makeButton() -> UIButton {
         let button = UIButton()
         button.setImage(UIImage(named: "Main.setting"), for: .normal)
-        //        button.addTarget(self, action: #selector(), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         viewColor.addSubview(button)
         return button
@@ -126,7 +125,7 @@ private extension MainView {
     
     func makeTableView() -> MainTableView {
         let tableView = MainTableView()
-        tableView.backgroundColor = UIColor.red
+        tableView.backgroundColor = UIColor.clear
         tableView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(tableView)
         return tableView

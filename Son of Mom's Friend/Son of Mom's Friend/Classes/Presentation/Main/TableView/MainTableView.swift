@@ -33,18 +33,45 @@ extension MainTableView {
 //MARK: UITableViewDataSourse
 extension MainTableView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        elements.count
+        2
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.Nunito.semiBold(size: 18.scale))
+            .lineHeight(22.scale)
+            .textAlignment(.center)
+            .letterSpacing(-0.41.scale)
+        
+        switch section {
+        case 0: return "Main.FirstSection.Text".localized.attributed(with: attrs).string
+        case 1: return "Main.SecondSection.Text".localized.attributed(with: attrs).string
+        default: return nil
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let element = elements[section]
-        switch element {
-        case .dateBirthday(let celebrities):
-            let todayBirthdays = celebrities.filter { isCelebrityBirthdayToday(celebrity: $0) }
+        switch section {
+        case 0:
+            let celebrities = elements.compactMap { element -> [Celebrity]? in
+                if case .dateBirthday(let celebrities) = element {
+                    return celebrities
+                }
+                return nil
+            }
+            let todayBirthdays = celebrities.flatMap { $0 }.filter { isCelebrityBirthdayToday(celebrity: $0) }
             return todayBirthdays.count
-        case .achievement(let achievements):
-            let achievemntsInUserAge = achievements.filter { checkAchievementsInUserAge(achievement: $0)}
-            return achievemntsInUserAge.count
+        case 1:
+            let achievements = elements.compactMap { element -> [Achievement]? in
+                if case .achievement(let achievements) = element {
+                    return achievements
+                }
+                return nil
+            }
+            let achievementsInUserAge = achievements.flatMap { $0 }.filter { checkAchievementsInUserAge(achievement: $0) }
+            return achievementsInUserAge.count
+        default:
+            return 0
         }
     }
     
@@ -58,7 +85,7 @@ extension MainTableView: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievementDetailsCell.self)) as? AchievementDetailsCell else { return UITableViewCell()}
             cell.setup(achievemnt: achievements[indexPath.row])
             return cell
-        }  
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

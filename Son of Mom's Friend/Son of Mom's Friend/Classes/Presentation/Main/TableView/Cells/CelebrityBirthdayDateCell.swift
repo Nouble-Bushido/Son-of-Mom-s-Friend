@@ -25,7 +25,9 @@ final class  CelebrityBirthdayDateCell: UITableViewCell {
 // MARK: Public
 extension CelebrityBirthdayDateCell {
     func setup(celebrity: Celebrity) {
-        descriptionLabel.text = celebrity.name
+        nameLabel.text = celebrity.name
+        
+        // TODO: add decription, photo
     }
 }
 
@@ -43,19 +45,19 @@ private extension CelebrityBirthdayDateCell {
 private extension CelebrityBirthdayDateCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            photo.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            photo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            photo.heightAnchor.constraint(equalToConstant: 72),
-            photo.widthAnchor.constraint(equalToConstant: 72),
+            photo.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
+            photo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.scale),
+            photo.heightAnchor.constraint(equalToConstant: 72.scale),
+            photo.widthAnchor.constraint(equalToConstant: 72.scale),
             
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
+            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.scale),
             
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5),
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
+            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.scale),
+            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5.scale),
         ])
     }
 }
@@ -64,23 +66,23 @@ private extension CelebrityBirthdayDateCell {
 private extension CelebrityBirthdayDateCell {
     func makePhoto() -> UIImageView {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 50
+        imageView.layer.cornerRadius = 50.scale
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(imageView)
+        contentView.addSubview(imageView)
         return imageView
     }
     
     func makeNameLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
+        contentView.addSubview(label)
         return label
     }
     
     func makeDescriptionLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
+        contentView.addSubview(label)
         return label
     }
 }

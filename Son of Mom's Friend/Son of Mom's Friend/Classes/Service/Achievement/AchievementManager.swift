@@ -27,9 +27,16 @@ extension AchievementManager {
     }
     
     func getAchievements(age: Int?, celebrityId: Int?) -> [Achievement] {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        
         guard
             let data = UserDefaults.standard.data(forKey: Constants.achievements),
-            let achievements = try? JSONDecoder().decode([Achievement].self, from: data)
+            let achievements = try? decoder.decode([Achievement].self, from: data)
         else {
             return []
         }

@@ -30,7 +30,9 @@ final class AchievementDetailsCell: UITableViewCell {
 //MARK: Public
 extension AchievementDetailsCell {
     func setup(achievemnt: Achievement) {
-        nameLabel.text = String(achievemnt.ageAtAchievement)
+        dateBirthLabel.text = String(achievemnt.ageAtAchievement)
+        descriptionLabel.text = String(achievemnt.description)
+        // TODO: add photo and name
     }
 }
 
@@ -48,26 +50,26 @@ private extension AchievementDetailsCell {
 private extension AchievementDetailsCell {
     func makeContstraints() {
         NSLayoutConstraint.activate([
-            photo.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            photo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            photo.heightAnchor.constraint(equalToConstant: 72),
-            photo.widthAnchor.constraint(equalToConstant: 72),
+            photo.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
+            photo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.scale),
+            photo.heightAnchor.constraint(equalToConstant: 72.scale),
+            photo.widthAnchor.constraint(equalToConstant: 72.scale),
             
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
+            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.scale),
             
-            picture.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            picture.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5),
+            picture.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
+            picture.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
             
-            dateBirthLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
+            dateBirthLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
             dateBirthLabel.leadingAnchor.constraint(equalTo: picture.trailingAnchor),
             dateBirthLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5),
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
+            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.scale),
+            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5.scale),
         ])
     }
 }
@@ -76,16 +78,16 @@ private extension AchievementDetailsCell {
 private extension AchievementDetailsCell {
     func makePhoto() -> UIImageView {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 50
+        imageView.layer.cornerRadius = 50.scale
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(imageView)
+        contentView.addSubview(imageView)
         return imageView
     }
     
     func makeNameLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
+        contentView.addSubview(label)
         return label
     }
 
@@ -93,21 +95,21 @@ private extension AchievementDetailsCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "")
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(imageView)
+        contentView.addSubview(imageView)
         return imageView
     }
     
     func makeDateBrithLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
+        contentView.addSubview(label)
         return label
     }
     
     func makeDescriptionLabel() -> UILabel {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(label)
+        contentView.addSubview(label)
         return label
     }
 }

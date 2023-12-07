@@ -15,7 +15,7 @@ final class CelebrityManager {
 
 // MARK: Public
 extension CelebrityManager {
-        static func configure() {
+    static func configure() {
         guard
             UserDefaults.standard.data(forKey: Constants.celebrities) == nil,
             let url = Bundle.main.url(forResource: "Celebrity", withExtension: "json"),
@@ -27,10 +27,18 @@ extension CelebrityManager {
     }
     
     func getCelebrities(birthdate: Date? = nil) -> [Celebrity] {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(formatter)
+        
         guard
             let data = UserDefaults.standard.data(forKey: Constants.celebrities),
-            let celebrities = try? JSONDecoder().decode([Celebrity].self, from: data)
+            let celebrities = try? decoder.decode([Celebrity].self, from: data)
         else {
+            print("No Data")
             return []
         }
         
@@ -39,7 +47,6 @@ extension CelebrityManager {
         if let birthday = birthdate {
             filterCelebrities = filterCelebrities.filter { $0.dateOfBirth == birthday }
         }
-        
         return filterCelebrities
     }
     

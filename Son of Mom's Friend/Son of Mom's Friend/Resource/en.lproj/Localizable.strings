@@ -18,4 +18,6 @@
 //MARK: Main
 "Main.Today.Text" = "СЕГОДНЯ";
 "Main.Date.Text" = "1adaw";
+"Main.FirstSection.Text" = "Кто сегодня родился";
+"Main.SecondSection.Text" = "Достижения людей в твои годы";
 
