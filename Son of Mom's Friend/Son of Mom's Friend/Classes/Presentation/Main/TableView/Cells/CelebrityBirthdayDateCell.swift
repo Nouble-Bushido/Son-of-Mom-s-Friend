@@ -45,19 +45,20 @@ private extension CelebrityBirthdayDateCell {
 private extension CelebrityBirthdayDateCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            photo.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
-            photo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5.scale),
-            photo.heightAnchor.constraint(equalToConstant: 72.scale),
+            photo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.scale),
+            photo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
+            photo.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10.scale),
             photo.widthAnchor.constraint(equalToConstant: 72.scale),
+            photo.heightAnchor.constraint(equalToConstant: 72.scale),
             
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5.scale),
-            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.scale),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.scale),
+            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 10.scale),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
             
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
-            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 5.scale),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 5.scale),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 5.scale),
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8.scale),
+            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 10.scale),
+            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
+            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10.scale)
         ])
     }
 }
