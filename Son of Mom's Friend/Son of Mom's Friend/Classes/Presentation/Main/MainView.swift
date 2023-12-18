@@ -14,6 +14,8 @@ final class MainView: UIView {
     lazy var dateLabel = makeLabelDate()
     lazy var settingButton = makeButton()
     lazy var tableView = makeTableView()
+    lazy var currentDate = Date()
+    lazy var dateFormater = DateFormatter()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -100,6 +102,11 @@ private extension MainView {
     }
     
     func makeLabelDate() -> UILabel {
+        dateFormater.dateFormat = "dd_mm_yyyy"
+        dateFormater.dateStyle = .long
+        dateFormater.locale = Locale(identifier: "ru_RU")
+        let formattedDate = dateFormater.string(from: currentDate)
+        
         let attrs = TextAttributes()
             .textColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1))
             .font(Fonts.Nunito.semiBold(size: 18.scale))
@@ -108,7 +115,7 @@ private extension MainView {
             .letterSpacing(0.41.scale)
         
         let label = UILabel()
-        label.attributedText = "Main.Date.Text".localized.attributed(with: attrs)
+        label.attributedText = formattedDate.attributed(with: attrs)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         viewColor.addSubview(label)

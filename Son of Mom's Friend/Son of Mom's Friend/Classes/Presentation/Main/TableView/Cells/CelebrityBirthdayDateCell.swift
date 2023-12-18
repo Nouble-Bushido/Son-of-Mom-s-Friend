@@ -14,8 +14,8 @@ final class  CelebrityBirthdayDateCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        makeConstraints()
         initialize()
+        makeConstraints()
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -26,8 +26,8 @@ final class  CelebrityBirthdayDateCell: UITableViewCell {
 extension CelebrityBirthdayDateCell {
     func setup(celebrity: Celebrity) {
         nameLabel.text = celebrity.name
-        
-        // TODO: add decription, photo
+        loadImage(from: celebrity.photoURL)
+        descriptionLabel.text = celebrity.mainAchievement
     }
 }
 
@@ -38,6 +38,22 @@ private extension CelebrityBirthdayDateCell {
         contentView.backgroundColor = UIColor.clear
         
         selectionStyle = .none
+    }
+    
+    private func loadImage(from urlString: String) {
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.photo.image = UIImage(data: data)
+            }
+        }.resume()
     }
 }
 
@@ -67,7 +83,9 @@ private extension CelebrityBirthdayDateCell {
 private extension CelebrityBirthdayDateCell {
     func makePhoto() -> UIImageView {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 50.scale
+        imageView.contentMode = .scaleToFill
+        imageView.layer.cornerRadius = 30.scale
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(imageView)
         return imageView
@@ -82,6 +100,7 @@ private extension CelebrityBirthdayDateCell {
     
     func makeDescriptionLabel() -> UILabel {
         let label = UILabel()
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(label)
         return label

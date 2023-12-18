@@ -10,7 +10,6 @@ import Foundation
 final class MainViewModel {
     private lazy var celebrityManager = CelebrityManager()
     private lazy var achievementManager = AchievementManager()
-    private lazy var userManager = UserManager()
 }
 
 extension MainViewModel {
@@ -23,11 +22,10 @@ extension MainViewModel {
     }
     
     func configure(input: Input) -> Output {
-        let celebrities = celebrityManager.getCelebrities() 
-        let achievements = getAchievements(age: 30, id: 2)
-        print("-----\(celebrities)")
-        print("-----\(achievements)")
-        
+        let celebrities = celebrityManager.getCelebrities()
+        let achievements = achievementManager.getAchievements()
+//        print("-----\(celebrities)")
+//        print("-----\(achievements)")
         let mainTableElements = createMainTableElements(celebrities: celebrities, achievements: achievements)
         input.bind(mainTableElements)
         return Output(didSelect: { selected in
@@ -37,16 +35,6 @@ extension MainViewModel {
 
 // MARK: Private
 private extension MainViewModel {
-    func getCelebrities() -> [Celebrity] {
-       let celebreties = celebrityManager.getCelebrities()
-        print("\(celebreties)")
-        return celebreties
-    }
-    
-    func getAchievements(age: Int?, id: Int?) -> [Achievement] {
-        achievementManager.getAchievements(age: age, celebrityId: id)
-    }
-    
     func createMainTableElements(celebrities: [Celebrity], achievements: [Achievement]) -> [MainTableElement] {
         var mainTableElements: [MainTableElement] = []
         

@@ -22,10 +22,6 @@ final class MainViewCountroller: UIViewController {
         super.viewDidLoad()
         actionSettingButon()
         
-        let celebreties = CelebrityManager()
-        let allCelebrities = celebreties.getCelebrities()
-        print("Celebrities: \(allCelebrities)")
-        
        let output = viewModel.configure(input: MainViewModel.Input(bind: { [weak self] elements in
             self?.mainView.tableView.setup(elements: elements)
         }))

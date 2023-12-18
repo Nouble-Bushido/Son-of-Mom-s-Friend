@@ -10,7 +10,6 @@ final class SplashViewModel {
     enum Route {
         case requestBirthdate, main
     }
-
     private lazy var userManager = UserManager()
 }
 

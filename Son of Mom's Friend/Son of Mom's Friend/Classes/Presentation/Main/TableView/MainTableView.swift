@@ -35,6 +35,7 @@ extension MainTableView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         2
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
@@ -49,7 +50,7 @@ extension MainTableView: UITableViewDataSource {
         default: return nil
         }
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
@@ -62,6 +63,7 @@ extension MainTableView: UITableViewDataSource {
             let todayBirthdays = celebrities.flatMap { $0 }.filter { isCelebrityBirthdayToday(celebrity: $0) }
             return todayBirthdays.count
         case 1:
+            
             let achievements = elements.compactMap { element -> [Achievement]? in
                 if case .achievement(let achievements) = element {
                     return achievements
@@ -76,10 +78,12 @@ extension MainTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch elements[indexPath.section] {
+        switch elements[indexPath.row] {
         case .dateBirthday(let celebrities):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CelebrityBirthdayDateCell.self)) as? CelebrityBirthdayDateCell else { return UITableViewCell()}
-            cell.setup(celebrity: celebrities[indexPath.row])
+            for celebrity in celebrities {
+                cell.setup(celebrity: celebrity)
+            }
             return cell
         case .achievement(let achievements):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievementDetailsCell.self)) as? AchievementDetailsCell else { return UITableViewCell()}
@@ -112,9 +116,10 @@ private extension MainTableView {
     
     func isCelebrityBirthdayToday(celebrity: Celebrity) -> Bool {
         let calendar = Calendar.current
-        let today = calendar.startOfDay(for: Date())
-        let celebrityBirthday = calendar.startOfDay(for: celebrity.dateOfBirth)
-        return calendar.isDate(today, equalTo: celebrityBirthday, toGranularity: .day)
+        let todayComponets = calendar.dateComponents([.day,.month], from: Date())
+        let celebrityBirthdayComponents = calendar.dateComponents([.day, .month], from: celebrity.dateOfBirth)
+        return celebrityBirthdayComponents.day == todayComponets.day &&
+               celebrityBirthdayComponents.month == todayComponets.month
     }
     
     func checkAchievementsInUserAge(achievement: Achievement) -> Bool {
