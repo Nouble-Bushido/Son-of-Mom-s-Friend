@@ -35,6 +35,7 @@ extension CelebrityManager {
                 let id = json["id"] as? Int,
                 let name = json["name"] as? String,
                 let biography = json["biography"] as? String,
+                let mainAchievement = json["mainAchievement"] as? String,
                 let photoURL = json["photoURL"] as? String,
                 let dateOfBirthString = json["dateOfBirth"] as? String,
                 let dateOfBirth = dateFormatter.date(from: dateOfBirthString),
@@ -47,6 +48,7 @@ extension CelebrityManager {
                 id: id,
                 name: name,
                 biography: biography,
+                mainAchievement: mainAchievement,
                 dateOfBirth: dateOfBirth,
                 photoURL: photoURL,
                 achievementIDs: achievementIDs
@@ -68,12 +70,12 @@ extension CelebrityManager {
            var filterCelebrities = celebrities
         
         if let birthday = birthdate {
-            let userComponets = Calendar.current.dateComponents([.day, .month], from: birthday)
+            let todayComponets = Calendar.current.dateComponents([.day, .month], from: birthday)
             
               filterCelebrities = filterCelebrities.filter {
                   
                   let celebrityComponents = Calendar.current.dateComponents([.day, .month], from: $0.dateOfBirth)
-                  return celebrityComponents.day == userComponets.day && celebrityComponents.month == userComponets.month
+                  return celebrityComponents.day == todayComponets.day && celebrityComponents.month == todayComponets.month
               }
           }
            return filterCelebrities
