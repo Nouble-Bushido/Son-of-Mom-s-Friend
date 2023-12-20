@@ -2,43 +2,48 @@
     "celebrities": [
         {
             "id": 1,
-            "name": "Ангелина Джоли",
+            "name": "Анджелина Джоли",
             "biography": "Актриса и гуманитарный работник",
-            "dateOfBirth": "1975-06-04",
-            "photoURL": "https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/d91cf99a-63a2-432a-a72b-ae0b8c6ea1d6/220x330",
-            "achievementIDs": [1, 2, 3]
+            "mainAchievement": "В 1999 году получила премию Оскар за фильм Прерванная жизнь",
+            "dateOfBirth": "20-12-1975",
+            "photoURL": "https://cuad.ask.fm/8d2/269e1/b62c/4584/b649/612e40fe6764/thumb_big/220657.jpg",
+            "achievementIDs": [1, 2, 11]
         },
         {
             "id": 2,
             "name": "Леонардо ДиКаприо",
             "biography": "Актёр и экологический активист",
-            "dateOfBirth": "1974-11-11",
-            "photoURL": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/9c33caef-be28-4257-b7ed-a407698f1a32/220x330",
-            "achievementIDs": [4, 5]
+            "mainAchievement": "В 23 года снялся в фильме Титаник",
+            "dateOfBirth": "11-11-1974",
+            "photoURL": "https://avt-6.foto.mail.ru/mail/alaevserge.1968/_avatar180?",
+            "achievementIDs": [3, 4, 12]
         },
         {
             "id": 3,
             "name": "Бейонсе",
             "biography": "Певица и актриса",
-            "dateOfBirth": "1981-09-04",
-            "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2gy8BicbdGkHkFNzUjcGI1c8J8V76wmV9HQ&usqp=CAU",
-            "achievementIDs": [6, 7, 8]
+            "mainAchievement": "В молодости пролажила путь к своей музыкальной доминированию",
+            "dateOfBirth": "20-12-1981",
+            "photoURL": "https://avt-28.foto.mail.ru/mail/saule_270389/_avatar180?1454532318&mrim=1",
+            "achievementIDs": [5, 6, 13]
         },
         {
             "id": 4,
             "name": "Элон Маск",
             "biography": "Предприниматель и инженер",
-            "dateOfBirth": "1971-06-28",
-            "photoURL": "https://thumbs.dfs.ivi.ru/storage28/contents/c/7/f18514fd0f32464135ed8899085f0f.jpg",
-            "achievementIDs": [9, 10]
+            "mainAchievement": "В 31 год основал PayPal, онлайн-сервис для электронных платежей",
+            "dateOfBirth": "28-06-1971",
+            "photoURL": "https://avt-19.foto.mail.ru/mail/legenkiy.vitya/_avatar180?",
+            "achievementIDs": [7, 8, 14]
         },
         {
             "id": 5,
             "name": "Тейлор Свифт",
             "biography": "Певица и автор песен",
-            "dateOfBirth": "1989-12-13",
-            "photoURL": "https://www.kino-teatr.ru/acter/foto/hollywood/256490.jpg",
-            "achievementIDs": [11, 12, 13]
+            "mainAchievement": "В 23 года Тейлор Свифт становилась яркой звездой поп-музыки, прокладывая свой уникальный путь к успеху и становясь одной из самых влиятельных артисток своего поколения.",
+            "dateOfBirth": "13-12-1989",
+            "photoURL": "https://avt-15.foto.mail.ru/mail/y-kucherovaelena/_avatar180?",
+            "achievementIDs": [9, 10, 15]
         }
     ]
 }

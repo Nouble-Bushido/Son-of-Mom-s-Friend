@@ -11,6 +11,7 @@ struct Celebrity: Codable {
     var id: Int
     var name: String
     var biography: String
+    var mainAchievement: String
     var dateOfBirth: Date
     var photoURL: String
     var achievementIDs: [Int]

@@ -19,15 +19,18 @@ extension AchievementManager {
         guard
             UserDefaults.standard.data(forKey: Constants.achievements) == nil,
             let url = Bundle.main.url(forResource: "Achievement", withExtension: "json"),
-            let data = try? Data(contentsOf: url)
+            let data = try? Data(contentsOf: url),
+            let jsonData = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+            let achievementArray = AchievementResponse.map(from: jsonData)
         else {
             return
         }
+        guard let encoded = try? JSONEncoder().encode(achievementArray) else { return }
         
-        UserDefaults.standard.set(data, forKey: Constants.achievements)
+        UserDefaults.standard.setValue(encoded, forKey: Constants.achievements)
     }
     
-    func getAchievements(age: Int?, celebrityId: Int?) -> [Achievement] {
+    func getAchievements() -> [Achievement] {
         guard
             let data = UserDefaults.standard.data(forKey: Constants.achievements),
             let achievements = try? JSONDecoder().decode([Achievement].self, from: data)
@@ -35,16 +38,7 @@ extension AchievementManager {
             return []
         }
         
-        var filteredAchievements = achievements
-        
-        if let ageAchievement = age {
-            filteredAchievements = filteredAchievements.filter { $0.ageAtAchievement == ageAchievement }
-        }
-        
-        if let celebrityId = celebrityId {
-            filteredAchievements = filteredAchievements.filter { $0.celebrityId == celebrityId }
-        }
-        
+        let filteredAchievements = achievements
         return filteredAchievements
     }
 }

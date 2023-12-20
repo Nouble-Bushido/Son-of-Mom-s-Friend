@@ -19,7 +19,6 @@ final class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let output = viewModel.configure(input: SplashViewModel.Input(
             route: route
         ))

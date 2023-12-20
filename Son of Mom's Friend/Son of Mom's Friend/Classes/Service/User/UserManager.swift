@@ -19,7 +19,7 @@ extension UserManager {
         guard let data = UserDefaults.standard.data(forKey: Constants.user) else {
             return nil
         }
-        
+
         return try? JSONDecoder().decode(User.self, from: data)
      }
      

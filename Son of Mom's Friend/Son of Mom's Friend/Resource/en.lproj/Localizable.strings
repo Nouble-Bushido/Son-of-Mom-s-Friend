@@ -15,3 +15,7 @@
 "BirthdateRequest.DateFormat.Text" = "ДД.ММ.ГГ";
 "BirthdateRequest.Continue.Text" = "Продолжить";
 
+//MARK: Main
+"Main.Today.Text" = "СЕГОДНЯ";
+"Main.FirstSection.Text" = "Кто сегодня родился";
+"Main.SecondSection.Text" = "Достижения людей в твои годы";
