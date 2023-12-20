@@ -22,9 +22,10 @@ final class MainViewCountroller: UIViewController {
         super.viewDidLoad()
         actionSettingButon()
         
-       let output = viewModel.configure(input: MainViewModel.Input(bind: { [weak self] elements in
-            self?.mainView.tableView.setup(elements: elements)
+        let output = viewModel.configure(input: MainViewModel.Input(bind: { [weak self] sections in
+            self?.mainView.tableView.setup(sections: sections)
         }))
+        
         didSelectElements = output.didSelect
         
         mainView.tableView.didSelectItem = { [weak self] selectedElement in

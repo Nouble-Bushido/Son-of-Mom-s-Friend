@@ -21,36 +21,11 @@ extension AchievementManager {
             let url = Bundle.main.url(forResource: "Achievement", withExtension: "json"),
             let data = try? Data(contentsOf: url),
             let jsonData = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-            let array = jsonData["achievements"] as? [[String: Any]]
+            let achievementArray = AchievementResponse.map(from: jsonData)
         else {
             return
         }
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        
-        let result = array.compactMap { json -> Achievement? in
-            guard
-                let id = json["id"] as? Int,
-                let date = json["date"] as? String,
-                let dateAchiev = dateFormatter.date(from: date),
-                let celebrityId = json["celebrityId"] as? Int,
-                let description = json["description"] as? String,
-                let ageAtAchievement = json["ageAtAchievement"] as? Int
-            else {
-                return nil
-            }
-            let achievement = Achievement(
-                id: id,
-                date: dateAchiev,
-                celebrityId: celebrityId,
-                description: description,
-                ageAtAchievement: ageAtAchievement
-            )
-            return achievement
-        }
-        guard let encoded = try? JSONEncoder().encode(result) else { return }
+        guard let encoded = try? JSONEncoder().encode(achievementArray) else { return }
         
         UserDefaults.standard.setValue(encoded, forKey: Constants.achievements)
     }
