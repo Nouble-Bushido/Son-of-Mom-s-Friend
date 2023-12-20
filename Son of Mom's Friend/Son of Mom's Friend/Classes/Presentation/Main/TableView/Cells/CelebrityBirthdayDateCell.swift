@@ -50,8 +50,8 @@ private extension CelebrityBirthdayDateCell {
                 return
             }
             
-            DispatchQueue.main.async {
-                self.photo.image = UIImage(data: data)
+            DispatchQueue.main.async { [weak self] in
+                self?.photo.image = UIImage(data: data)
             }
         }.resume()
     }
