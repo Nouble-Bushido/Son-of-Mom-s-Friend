@@ -8,8 +8,10 @@
 import UIKit
 
 final class MainTableView: UITableView {
-    lazy var elements = [MainTableElement]()
+    lazy var sections = [MainTableSection]()
     var didSelectItem: ((MainTableElement) -> Void)?
+    lazy var lineView = makeLineView()
+    lazy var viewModel = MainViewModel()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -23,9 +25,8 @@ final class MainTableView: UITableView {
 
 //MARK: Public
 extension MainTableView {
-    func setup(elements: [MainTableElement]) {
-        self.elements = elements
-        print("Количество элементов: \(elements.count)")
+    func setup(sections: [MainTableSection]) {
+        self.sections = sections
         reloadData()
     }
 }
@@ -33,67 +34,44 @@ extension MainTableView {
 //MARK: UITableViewDataSourse
 extension MainTableView: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        sections.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let attrs = TextAttributes()
-            .textColor(UIColor.white)
-            .font(Fonts.Nunito.semiBold(size: 18.scale))
-            .lineHeight(22.scale)
-            .textAlignment(.center)
-            .letterSpacing(-0.41.scale)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
         
-        switch section {
-        case 0: return "Main.FirstSection.Text".localized.attributed(with: attrs).string
-        case 1: return "Main.SecondSection.Text".localized.attributed(with: attrs).string
-        default: return nil
-        }
+        let label = UILabel()
+        label.textColor = UIColor.black
+        label.font = Fonts.Nunito.semiBold(size: 18.scale)
+        label.textAlignment = .center
+        label.text = sections[section].title
+        let labelSize = label.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
+        label.frame = CGRect(x: 5, y: -5, width: labelSize.width, height: labelSize.height)
+        headerView.addSubview(label)
+        return headerView
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            let celebrities = elements.compactMap { element -> [Celebrity]? in
-                if case .dateBirthday(let celebrities) = element {
-                    return celebrities
-                }
-                return nil
-            }
-            let todayBirthdays = celebrities.flatMap { $0 }.filter { isCelebrityBirthdayToday(celebrity: $0) }
-            return todayBirthdays.count
-        case 1:
-            
-            let achievements = elements.compactMap { element -> [Achievement]? in
-                if case .achievement(let achievements) = element {
-                    return achievements
-                }
-                return nil
-            }
-            let achievementsInUserAge = achievements.flatMap { $0 }.filter { checkAchievementsInUserAge(achievement: $0) }
-            return achievementsInUserAge.count
-        default:
-            return 0
-        }
+        sections[section].elements.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch elements[indexPath.row] {
-        case .dateBirthday(let celebrities):
+        switch sections[indexPath.section].elements[indexPath.row] {
+        case .dateBirthday(let celebrity):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CelebrityBirthdayDateCell.self)) as? CelebrityBirthdayDateCell else { return UITableViewCell()}
-            for celebrity in celebrities {
-                cell.setup(celebrity: celebrity)
-            }
+            cell.setup(celebrity: celebrity)
             return cell
-        case .achievement(let achievements):
+        case .achievement(let achievement):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievementDetailsCell.self)) as? AchievementDetailsCell else { return UITableViewCell()}
-            cell.setup(achievemnt: achievements[indexPath.row])
+            let celebritys = viewModel.gateCelebrity(for: achievement.celebrityId)
+            cell.setup(achievemnt: achievement, celebrity: celebritys)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedElement = elements[indexPath.section]
+        let selectedElement = sections[indexPath.section].elements[indexPath.row]
         didSelectItem?(selectedElement)
     }
 }
@@ -112,22 +90,13 @@ private extension MainTableView {
         register(CelebrityBirthdayDateCell.self, forCellReuseIdentifier: String(describing: CelebrityBirthdayDateCell.self))
         dataSource = self
         delegate = self
+        separatorStyle = .none
     }
     
-    func isCelebrityBirthdayToday(celebrity: Celebrity) -> Bool {
-        let calendar = Calendar.current
-        let todayComponets = calendar.dateComponents([.day,.month], from: Date())
-        let celebrityBirthdayComponents = calendar.dateComponents([.day, .month], from: celebrity.dateOfBirth)
-        return celebrityBirthdayComponents.day == todayComponets.day &&
-               celebrityBirthdayComponents.month == todayComponets.month
-    }
-    
-    func checkAchievementsInUserAge(achievement: Achievement) -> Bool {
-        let userManager = UserManager()
-        guard let user = userManager.getUser() else { return false }
-        let calendar = Calendar.current
-        let currentDate = Date()
-        let userAge = calendar.dateComponents([.year], from: user.dateOfBirth, to: currentDate).year ?? 0
-        return userAge == achievement.ageAtAchievement
+    func makeLineView() -> UIView {
+        let view = UIView()
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }
 }

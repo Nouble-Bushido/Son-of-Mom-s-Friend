@@ -8,6 +8,6 @@
 import Foundation
 
 enum MainTableElement {
-    case dateBirthday([Celebrity])
-    case achievement([Achievement])
+    case dateBirthday(Celebrity)
+    case achievement(Achievement)
 }

@@ -51,8 +51,8 @@ private extension MainView {
             settingButton.trailingAnchor.constraint(equalTo: viewColor.trailingAnchor, constant: -20.scale),
             
             tableView.topAnchor.constraint(equalTo: viewColor.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
@@ -124,7 +124,7 @@ private extension MainView {
     
     func makeButton() -> UIButton {
         let button = UIButton()
-        button.setImage(UIImage(named: "Main.setting"), for: .normal)
+        button.setImage(UIImage(named: "Main.Setting"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         viewColor.addSubview(button)
         return button

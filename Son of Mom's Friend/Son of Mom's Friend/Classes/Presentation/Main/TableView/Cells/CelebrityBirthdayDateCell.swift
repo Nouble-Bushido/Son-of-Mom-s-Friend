@@ -8,6 +8,7 @@
 import UIKit
 
 final class  CelebrityBirthdayDateCell: UITableViewCell {
+    lazy var backroundUIView = makeBackgroundView()
     lazy var photo = makePhoto()
     lazy var nameLabel = makeNameLabel()
     lazy var descriptionLabel = makeDescriptionLabel()
@@ -34,13 +35,21 @@ extension CelebrityBirthdayDateCell {
 // MARK: Private
 private extension CelebrityBirthdayDateCell {
     func initialize() {
-        backgroundColor = UIColor.clear
-        contentView.backgroundColor = UIColor.clear
-        
+        setupRandomBackgroundColor()
+        contentView.layer.cornerRadius = 20
         selectionStyle = .none
     }
     
-    private func loadImage(from urlString: String) {
+    func setupRandomBackgroundColor() {
+        let randomColor = UIColor(
+            red: CGFloat.random(in: 0.8...1),
+            green: CGFloat.random(in: 0.8...1),
+            blue: CGFloat.random(in: 0.8...1),
+            alpha: CGFloat.random(in: 0.8...1))
+        backroundUIView.backgroundColor = randomColor
+    }
+    
+    func loadImage(from urlString: String) {
         guard let url = URL(string: urlString) else {
             return
         }
@@ -60,49 +69,66 @@ private extension CelebrityBirthdayDateCell {
 // MARK: Make constraints
 private extension CelebrityBirthdayDateCell {
     func makeConstraints() {
+        
         NSLayoutConstraint.activate([
-            photo.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.scale),
-            photo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
-            photo.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10.scale),
+            backroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.scale),
+            backroundUIView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.scale),
+            backroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            backroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            
+            photo.leadingAnchor.constraint(equalTo: backroundUIView.leadingAnchor, constant: 10.scale),
+            photo.centerYAnchor.constraint(equalTo: backroundUIView.centerYAnchor),
             photo.widthAnchor.constraint(equalToConstant: 72.scale),
             photo.heightAnchor.constraint(equalToConstant: 72.scale),
             
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.scale),
-            nameLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 10.scale),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
+            nameLabel.topAnchor.constraint(equalTo: backroundUIView.topAnchor, constant: 10.scale),
+            nameLabel.leadingAnchor.constraint(equalTo: backroundUIView.leadingAnchor, constant: 10.scale + 72.scale + 10.scale),
+            nameLabel.trailingAnchor.constraint(equalTo: backroundUIView.trailingAnchor, constant: -10.scale),
             
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8.scale),
-            descriptionLabel.leadingAnchor.constraint(equalTo: photo.trailingAnchor, constant: 10.scale),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
-            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -10.scale)
+            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
+            descriptionLabel.leadingAnchor.constraint(equalTo: backroundUIView.leadingAnchor, constant: 10.scale + 72.scale + 10.scale),
+            descriptionLabel.trailingAnchor.constraint(equalTo: backroundUIView.trailingAnchor, constant: -10.scale),
+            descriptionLabel.bottomAnchor.constraint(equalTo: backroundUIView.bottomAnchor, constant: -10.scale)
         ])
     }
 }
 
 // MARK: Lazy MakeTableAuthorCell
 private extension CelebrityBirthdayDateCell {
+    func makeBackgroundView() -> UIView {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
     func makePhoto() -> UIImageView {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
-        imageView.layer.cornerRadius = 30.scale
+        imageView.layer.cornerRadius = 35.scale
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(imageView)
+        backroundUIView.addSubview(imageView)
         return imageView
     }
     
     func makeNameLabel() -> UILabel {
         let label = UILabel()
+        label.numberOfLines = 0
+        label.font = Fonts.Nunito.semiBold(size: 17.scale)
+        label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(label)
+        backroundUIView.addSubview(label)
         return label
     }
     
     func makeDescriptionLabel() -> UILabel {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = Fonts.Nunito.regular(size: 14.scale)
+        label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(label)
+        backroundUIView.addSubview(label)
         return label
     }
 }
