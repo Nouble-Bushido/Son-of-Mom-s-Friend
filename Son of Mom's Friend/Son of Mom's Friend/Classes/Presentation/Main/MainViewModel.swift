@@ -73,4 +73,15 @@ private extension MainViewModel {
         let userAge = calendar.dateComponents([.year], from: user.dateOfBirth, to: currentDate).year ?? 0
         return userAge == achievement.ageAtAchievement
     }
+    
+    func findCelebrityAndAchievementPair(achievementID: Int, celebrities: [Celebrity], achievements: [Achievement]) -> (Celebrity, Achievement)? {
+        for achievement in achievements {
+            if achievement.id == achievementID {
+                if let celebrity = celebrities.first(where: { $0.id == achievement.celebrityId }) {
+                    return (celebrity, achievement)
+                }
+            }
+        }
+        return nil
+    }
 }
