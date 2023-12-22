@@ -29,14 +29,12 @@ final class AchievementDetailsCell: UITableViewCell {
 
 //MARK: Public
 extension AchievementDetailsCell {
-    func setup(achievemnt: Achievement, celebrity: Celebrity?) {
+    func setup(achievemnt: Achievement, celebrity: Celebrity) {
         let formattedDate = formattedDate(achievemnt.date)
         dateBirthLabel.text = formattedDate
         descriptionLabel.text = achievemnt.description
-        if let celebrity = celebrity {
-            nameLabel.text = celebrity.name
-            loadImage(from: celebrity.photoURL)
-        }
+        nameLabel.text = celebrity.name
+        loadImage(from: celebrity.photoURL)
         setupRandomBackgroundColor()
     }
 }
