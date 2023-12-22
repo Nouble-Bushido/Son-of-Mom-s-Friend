@@ -10,7 +10,6 @@ import UIKit
 final class MainTableView: UITableView {
     lazy var sections = [MainTableSection]()
     var didSelectItem: ((MainTableElement) -> Void)?
-    lazy var lineView = makeLineView()
     lazy var viewModel = MainViewModel()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -91,12 +90,5 @@ private extension MainTableView {
         dataSource = self
         delegate = self
         separatorStyle = .none
-    }
-    
-    func makeLineView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = UIColor.clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }
 }

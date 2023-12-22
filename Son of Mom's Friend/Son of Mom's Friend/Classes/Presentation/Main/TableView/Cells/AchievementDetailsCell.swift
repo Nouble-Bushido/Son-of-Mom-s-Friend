@@ -14,7 +14,6 @@ final class AchievementDetailsCell: UITableViewCell {
     lazy var dateBirthLabel = makeDateBrithLabel()
     lazy var picture = makePicture()
     lazy var descriptionLabel = makeDescriptionLabel()
-//    var celebrity: Celebrity?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
