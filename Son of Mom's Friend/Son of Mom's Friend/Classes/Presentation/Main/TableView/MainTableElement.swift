@@ -9,5 +9,10 @@ import Foundation
 
 enum MainTableElement {
     case dateBirthday(Celebrity)
-    case achievement(Achievement)
+    case celebrityAndAchievementPair(PairCelebrityAndAchievement)
+}
+
+struct PairCelebrityAndAchievement {
+    let celebrity: Celebrity
+    let achievement: Achievement
 }

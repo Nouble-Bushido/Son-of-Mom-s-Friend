@@ -10,8 +10,6 @@ import UIKit
 final class MainTableView: UITableView {
     lazy var sections = [MainTableSection]()
     var didSelectItem: ((MainTableElement) -> Void)?
-    lazy var lineView = makeLineView()
-    lazy var viewModel = MainViewModel()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -62,10 +60,11 @@ extension MainTableView: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CelebrityBirthdayDateCell.self)) as? CelebrityBirthdayDateCell else { return UITableViewCell()}
             cell.setup(celebrity: celebrity)
             return cell
-        case .achievement(let achievement):
+        case .celebrityAndAchievementPair(let pair):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievementDetailsCell.self)) as? AchievementDetailsCell else { return UITableViewCell()}
-            let celebritys = viewModel.gateCelebrity(for: achievement.celebrityId)
-            cell.setup(achievemnt: achievement, celebrity: celebritys)
+            let celebrity = pair.celebrity
+            let achievement = pair.achievement
+            cell.setup(achievemnt: achievement, celebrity: celebrity)
             return cell
         }
     }
@@ -91,12 +90,5 @@ private extension MainTableView {
         dataSource = self
         delegate = self
         separatorStyle = .none
-    }
-    
-    func makeLineView() -> UIView {
-        let view = UIView()
-        view.backgroundColor = UIColor.clear
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
     }
 }
