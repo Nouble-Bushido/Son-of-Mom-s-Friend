@@ -31,6 +31,8 @@
 		12F8B16C2B1ECB0000845A74 /* AchievementDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8B16B2B1ECB0000845A74 /* AchievementDetailsCell.swift */; };
 		12F8B16E2B1ECB7E00845A74 /* MainTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8B16D2B1ECB7E00845A74 /* MainTableElement.swift */; };
 		12F8B1702B1EEA8000845A74 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8B16F2B1EEA8000845A74 /* MainViewModel.swift */; };
+		12FF6E7A2B3BC388002A3F0A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6E792B3BC388002A3F0A /* InfoView.swift */; };
+		12FF6E7C2B3BC3A3002A3F0A /* InfoViewCountroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6E7B2B3BC3A3002A3F0A /* InfoViewCountroller.swift */; };
 		DE3635B82AFD40FE00B42FA2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */; };
 		DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B92AFD410500B42FA2 /* SplashView.swift */; };
 		DE3635BD2AFD415A00B42FA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE3635BF2AFD415A00B42FA2 /* Localizable.strings */; };
@@ -74,6 +76,8 @@
 		12F8B16B2B1ECB0000845A74 /* AchievementDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailsCell.swift; sourceTree = "<group>"; };
 		12F8B16D2B1ECB7E00845A74 /* MainTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableElement.swift; sourceTree = "<group>"; };
 		12F8B16F2B1EEA8000845A74 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		12FF6E792B3BC388002A3F0A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		12FF6E7B2B3BC3A3002A3F0A /* InfoViewCountroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCountroller.swift; sourceTree = "<group>"; };
 		DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DE3635B92AFD410500B42FA2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE3635BE2AFD415A00B42FA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			children = (
 				1222CE922AFB487A003D3DB7 /* Splash */,
 				1222980A2B0C45E7002771CF /* Main */,
+				12FF6E782B3BC359002A3F0A /* Info */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -211,6 +216,15 @@
 				12F8B16B2B1ECB0000845A74 /* AchievementDetailsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		12FF6E782B3BC359002A3F0A /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				12FF6E792B3BC388002A3F0A /* InfoView.swift */,
+				12FF6E7B2B3BC3A3002A3F0A /* InfoViewCountroller.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		DE3635AF2AFD3C2300B42FA2 /* Misc */ = {
@@ -435,6 +449,7 @@
 				1275D0CE2B01C6E7009F622E /* BirthdateRequestViewController.swift in Sources */,
 				12F8B1702B1EEA8000845A74 /* MainViewModel.swift in Sources */,
 				1222980C2B0C4610002771CF /* MainViewCountroller.swift in Sources */,
+				12FF6E7C2B3BC3A3002A3F0A /* InfoViewCountroller.swift in Sources */,
 				DE3635C52AFD424400B42FA2 /* UIColor+Extension.swift in Sources */,
 				1222980E2B0C461F002771CF /* MainView.swift in Sources */,
 				12F8B16C2B1ECB0000845A74 /* AchievementDetailsCell.swift in Sources */,
@@ -456,6 +471,7 @@
 				12F3755E2B32C9590020F993 /* MainTableSection.swift in Sources */,
 				DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */,
 				1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */,
+				12FF6E7A2B3BC388002A3F0A /* InfoView.swift in Sources */,
 				1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
