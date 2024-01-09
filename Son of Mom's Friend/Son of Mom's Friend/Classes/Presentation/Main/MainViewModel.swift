@@ -37,12 +37,13 @@ extension MainViewModel {
             }
         }
 
-        let celebritySection = MainTableSection(title: "Main.FirstSection.Text".localized, elements: todayBirthdays.map { .dateBirthday($0) })
+        let celebritySection = MainTableSection(title: "Main.FirstSection.Text".localized, elements: todayBirthdays.map { .celebrity($0) })
         let pairsSection = MainTableSection(title: "Main.SecondSection.Text".localized, elements: celebrityAchievementPairs.map { .celebrityAndAchievementPair($0) })
         
         let sections: [MainTableSection] = [celebritySection, pairsSection]
         input.bind(sections)
         return Output(didSelect: { selected in
+            
         })
     }
 }

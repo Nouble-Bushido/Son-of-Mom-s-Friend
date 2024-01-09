@@ -8,7 +8,7 @@
 import Foundation
 
 enum MainTableElement {
-    case dateBirthday(Celebrity)
+    case celebrity(Celebrity)
     case celebrityAndAchievementPair(PairCelebrityAndAchievement)
 }
 

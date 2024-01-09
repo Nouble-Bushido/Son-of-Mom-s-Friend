@@ -21,6 +21,7 @@ final class MainViewCountroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         actionSettingButon()
+        mainView.tableView.navigationController = navigationController
         
         let output = viewModel.configure(input: MainViewModel.Input(bind: { [weak self] sections in
             self?.mainView.tableView.setup(sections: sections)
@@ -39,8 +40,8 @@ private extension MainViewCountroller {
         mainView.settingButton.addTarget(self, action: #selector(pressSettingButon), for: .touchUpInside)
     }
     
-    @objc
-    func pressSettingButon() {
+    @objc func pressSettingButon() {
         //TODO: go to settingView
     }
 }
+

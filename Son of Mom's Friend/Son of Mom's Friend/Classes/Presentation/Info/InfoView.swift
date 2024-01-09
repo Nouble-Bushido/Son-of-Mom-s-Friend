@@ -8,12 +8,15 @@
 import UIKit
 
 final class InfoView: UIView {
+    lazy var contentView = makeContentView()
     lazy var nameLabel = makeNameLabel()
     lazy var pictureImage = makePicture()
     lazy var birthdayLabel = makeBirthdayLabel()
     lazy var photoImage = makePhoto()
     lazy var bioghraphyLabel = makeBiographyLabel()
     lazy var infoBiographyLabel = makeIntoBiographyLabel()
+    lazy var achievemetnLabel = makeAchievementLabel()
+    lazy var tableView = makeTableView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +33,10 @@ final class InfoView: UIView {
 private extension InfoView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
             photoImage.topAnchor.constraint(equalTo: topAnchor, constant: 100.scale),
             photoImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.scale),
             photoImage.heightAnchor.constraint(equalToConstant: 100.scale),
@@ -51,17 +58,32 @@ private extension InfoView {
             
             infoBiographyLabel.topAnchor.constraint(equalTo: bioghraphyLabel.bottomAnchor, constant: 5.scale),
             infoBiographyLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.scale),
-            infoBiographyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.scale)
+            infoBiographyLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.scale),
+            
+            achievemetnLabel.topAnchor.constraint(equalTo: infoBiographyLabel.bottomAnchor, constant: 20.scale),
+            achievemetnLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10.scale),
+            achievemetnLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10.scale),
+            
+            tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10.scale),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
 }
 
 // MARK: Lazy initialization
 private extension InfoView {
+    func makeContentView() -> UIView {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeNameLabel() -> UILabel {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        contentView.addSubview(view)
         return view
     }
     
@@ -69,14 +91,14 @@ private extension InfoView {
         let view = UIImageView()
         view.image = UIImage(named: "Achievement.Image")
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        contentView.addSubview(view)
         return view
     }
     
     func makeBirthdayLabel() -> UILabel {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        contentView.addSubview(view)
         return view
     }
     
@@ -85,21 +107,14 @@ private extension InfoView {
         view.layer.cornerRadius = 50.scale
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        contentView.addSubview(view)
         return view
     }
     
     func makeBiographyLabel() -> UILabel {
-        let attr = TextAttributes()
-            .textColor(UIColor(red: 1, green: 1, blue: 1, alpha: 1))
-            .font(Fonts.Nunito.semiBold(size: 18.scale))
-            .lineHeight(22.scale)
-            .textAlignment(.center)
-            .letterSpacing(-0.41.scale)
-        
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        contentView.addSubview(view)
         return view
     }
     
@@ -109,18 +124,22 @@ private extension InfoView {
         view.layer.backgroundColor = UIColor(red: 0.945, green: 0.953, blue: 0.99, alpha: 1).cgColor
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeAchievementLabel() -> UILabel {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeTableView() -> InfoTableView {
+        let view = InfoTableView()
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
     }
-}
-
-// MARK: UpdateUI
-extension InfoView {
-    func setup(with celebrity: Celebrity) {
-        
-    }
-    
-    //    func setup(with pair: PairCelebrityAndAchievement) {
-    //
-    //    }
 }
