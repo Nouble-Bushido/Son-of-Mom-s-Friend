@@ -6,8 +6,12 @@
 //
 
 final class InfoViewModel {
-    private lazy var achievementManager = AchievementManager()
-    var infoFromMainTableView: MainTableElement?
+    private let achievementManager = AchievementManager()
+    private let celebrity: Celebrity
+    
+    init(celebrity: Celebrity) {
+        self.celebrity = celebrity
+    }
 }
 
 extension InfoViewModel {

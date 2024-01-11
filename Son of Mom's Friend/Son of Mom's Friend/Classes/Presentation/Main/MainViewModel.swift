@@ -8,6 +8,10 @@
 import Foundation
 
 final class MainViewModel {
+    enum Route {
+        case info(Celebrity)
+    }
+    
     private lazy var celebrityManager = CelebrityManager()
     private lazy var achievementManager = AchievementManager()
     private lazy var userManager = UserManager()
@@ -15,6 +19,7 @@ final class MainViewModel {
 
 extension MainViewModel {
     struct Input {
+        let route: (Route) -> Void
         let bind: ([MainTableSection]) -> ()
     }
     
@@ -36,14 +41,15 @@ extension MainViewModel {
                 celebrityAchievementPairs.append(pair)
             }
         }
-
+        
         let celebritySection = MainTableSection(title: "Main.FirstSection.Text".localized, elements: todayBirthdays.map { .celebrity($0) })
         let pairsSection = MainTableSection(title: "Main.SecondSection.Text".localized, elements: celebrityAchievementPairs.map { .celebrityAndAchievementPair($0) })
         
         let sections: [MainTableSection] = [celebritySection, pairsSection]
         input.bind(sections)
-        return Output(didSelect: { selected in
-            
+        return Output(didSelect: { [weak self] selected in
+            guard case let .celebrity(celebrity) = selected else { return }
+            input.route(.info(celebrity))
         })
     }
 }

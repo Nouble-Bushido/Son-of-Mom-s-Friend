@@ -10,8 +10,6 @@ import UIKit
 final class MainTableView: UITableView {
     lazy var sections = [MainTableSection]()
     var didSelectItem: ((MainTableElement) -> Void)?
-    lazy var viewModel = InfoViewModel()
-    weak var navigationController: UINavigationController?
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -73,9 +71,7 @@ extension MainTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedElement = sections[indexPath.section].elements[indexPath.row]
-        viewModel.infoFromMainTableView = selectedElement
-        let infoViewController = InfoViewCountroller(viewModel: viewModel)
-        navigationController?.pushViewController(infoViewController, animated: true)
+        didSelectItem?(selectedElement)
   }
 }
 

@@ -21,11 +21,16 @@ final class MainViewCountroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         actionSettingButon()
-        mainView.tableView.navigationController = navigationController
-        
-        let output = viewModel.configure(input: MainViewModel.Input(bind: { [weak self] sections in
-            self?.mainView.tableView.setup(sections: sections)
-        }))
+      
+        let output = viewModel.configure(input: MainViewModel.Input(route: { route in
+            switch route {
+            case .info(let celebrity):
+                let vc = InfoViewCountroller(celebrity: celebrity)
+                self.navigationController?.pushViewController(vc, animated: true)
+                }
+            }, bind: { [weak self] sections in
+                self?.mainView.tableView.setup(sections: sections)
+            }))
         
         didSelectElements = output.didSelect
         

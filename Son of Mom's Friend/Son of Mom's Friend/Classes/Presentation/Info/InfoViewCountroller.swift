@@ -12,8 +12,8 @@ final class InfoViewCountroller: UIViewController {
     private var viewModel: InfoViewModel
     private var didSelectElements: ((InfoTablePair) -> Void)?
     
-    init(viewModel: InfoViewModel) {
-        self.viewModel = viewModel
+    init(celebrity: Celebrity) {
+        self.viewModel = InfoViewModel(celebrity: celebrity)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -28,7 +28,6 @@ final class InfoViewCountroller: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupInfoView()
         
         let output = viewModel.configure(input: InfoViewModel.Input(bind: { [weak self] pairs in
             self?.infoView.tableView.setup(pairs: pairs)
@@ -44,49 +43,49 @@ final class InfoViewCountroller: UIViewController {
 
 //MARK: SetupView
 private extension InfoViewCountroller {
-    func setupInfoView() {
-        guard let infoElement = viewModel.infoFromMainTableView else {
-            return
-        }
-        
-        switch infoElement {
-        case .celebrityAndAchievementPair(let pair):
-            setupInfoView(with: pair)
-        case .celebrity(_):
-            print()
-        }
-    }
-    
-    func setupInfoView(with pair: PairCelebrityAndAchievement) {
-        loadImage(from: pair.celebrity.photoURL)
-        infoView.bioghraphyLabel.text = "Info.Biography.Text".localized
-        let formaterDate = formattedDate(pair.celebrity.dateOfBirth)
-        infoView.birthdayLabel.text = formaterDate
-        infoView.infoBiographyLabel.text = pair.celebrity.biography
-        infoView.achievemetnLabel.text = "Info.Achievement.Text".localized
-        infoView.nameLabel.text = pair.celebrity.name
-    }
-    
-    func loadImage(from urlString: String) {
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.infoView.photoImage.image = UIImage(data: data)
-            }
-        }.resume()
-    }
-    
-    func formattedDate(_ date: Date) -> String {
-        let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "dd.MM.yyyy"
-        let stringDate = dateFormater.string(from: date)
-        return stringDate
-    }
+//    func setupInfoView() {
+//        guard let infoElement = viewModel.infoFromMainTableView else {
+//            return
+//        }
+//        
+//        switch infoElement {
+//        case .celebrityAndAchievementPair(let pair):
+//            setupInfoView(with: pair)
+//        case .celebrity(_):
+//            print()
+//        }
+//    }
+//    
+//    func setupInfoView(with pair: PairCelebrityAndAchievement) {
+//        loadImage(from: pair.celebrity.photoURL)
+//        infoView.bioghraphyLabel.text = "Info.Biography.Text".localized
+//        let formaterDate = formattedDate(pair.celebrity.dateOfBirth)
+//        infoView.birthdayLabel.text = formaterDate
+//        infoView.infoBiographyLabel.text = pair.celebrity.biography
+//        infoView.achievemetnLabel.text = "Info.Achievement.Text".localized
+//        infoView.nameLabel.text = pair.celebrity.name
+//    }
+//    
+//    func loadImage(from urlString: String) {
+//        guard let url = URL(string: urlString) else {
+//            return
+//        }
+//        
+//        URLSession.shared.dataTask(with: url) { data, response, error in
+//            guard let data = data, error == nil else {
+//                return
+//            }
+//            
+//            DispatchQueue.main.async { [weak self] in
+//                self?.infoView.photoImage.image = UIImage(data: data)
+//            }
+//        }.resume()
+//    }
+//    
+//    func formattedDate(_ date: Date) -> String {
+//        let dateFormater = DateFormatter()
+//        dateFormater.dateFormat = "dd.MM.yyyy"
+//        let stringDate = dateFormater.string(from: date)
+//        return stringDate
+//    }
 }
