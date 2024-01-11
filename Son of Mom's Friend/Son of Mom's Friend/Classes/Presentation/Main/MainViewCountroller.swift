@@ -22,11 +22,11 @@ final class MainViewCountroller: UIViewController {
         super.viewDidLoad()
         actionSettingButon()
       
-        let output = viewModel.configure(input: MainViewModel.Input(route: { route in
+        let output = viewModel.configure(input: MainViewModel.Input(route: { [weak self] route in
             switch route {
             case .info(let celebrity):
                 let vc = InfoViewCountroller(celebrity: celebrity)
-                self.navigationController?.pushViewController(vc, animated: true)
+                self?.navigationController?.pushViewController(vc, animated: true)
                 }
             }, bind: { [weak self] sections in
                 self?.mainView.tableView.setup(sections: sections)
