@@ -8,12 +8,12 @@
 import UIKit
 
 final class InfoTableView: UITableView {
-    var pair = [InfoTablePair]()
-    var didSelectItem: ((InfoTablePair) -> Void)?
-    var selectedCelebrityPair: InfoTablePair?
+    var didSelectItem: ((InfoTableElement) -> Void)?
+    lazy var elements = [InfoTableElement]()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -22,8 +22,8 @@ final class InfoTableView: UITableView {
 }
 
 extension InfoTableView {
-    func setup(pairs: [InfoTablePair]) {
-        self.pair = pairs
+    func setup(elements: [InfoTableElement]) {    
+        self.elements = elements
         reloadData()
     }
 }
@@ -31,14 +31,52 @@ extension InfoTableView {
 //MARK: UITableViewDataSourse
 extension InfoTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+       return elements.count
     }
-        
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: InfoTableViewCell.self)) as? InfoTableViewCell else { return UITableViewCell() }
-        cell.setup(with: pair[indexPath.row])
-        return cell
+        switch elements[indexPath.row] {
+        case .celebrityInfo(let celebrity):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CelebrityInfoCell.self)) as? CelebrityInfoCell else { return UITableViewCell()}
+            cell.setup(celebrity: celebrity)
+            return cell
+        case .biographyName(let text):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BiographyNameCell.self)) as? BiographyNameCell else { return UITableViewCell()}
+            cell.setup(text: text)
+            return cell
+        case .biographyInfo(let celebrity):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BiographyInfoCell.self)) as? BiographyInfoCell else { return UITableViewCell()}
+            cell.setup(celebrity: celebrity)
+            return cell
+        case .achievemntName(let text):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievementNameCell.self)) as? AchievementNameCell else { return UITableViewCell()}
+            cell.setup(text: text)
+            return cell
+        case .achievementInfo(let celebrity, let achievements):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievemtInfoCell.self)) as? AchievemtInfoCell else { return UITableViewCell()}
+            cell.setup(celebrity: celebrity, achievements: achievements)
+            return cell
+        }
     }
 }
 
+//MARK: UITableViewDelegate
+extension InfoTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+//MARK: Private
+private extension InfoTableView {
+    func initialize() {
+        register(CelebrityInfoCell.self, forCellReuseIdentifier: String(describing: CelebrityInfoCell.self))
+        register(BiographyNameCell.self, forCellReuseIdentifier: String(describing: BiographyNameCell.self))
+        register(BiographyInfoCell.self, forCellReuseIdentifier: String(describing: BiographyInfoCell.self))
+        register(AchievementNameCell.self, forCellReuseIdentifier: String(describing: AchievementNameCell.self))
+        register(AchievemtInfoCell.self, forCellReuseIdentifier: String(describing: AchievemtInfoCell.self))
+        dataSource = self
+        delegate = self
+        separatorStyle = .none
+    }
+}

@@ -8,7 +8,7 @@
 final class InfoViewModel {
     private let achievementManager = AchievementManager()
     private let celebrity: Celebrity
-    
+ 
     init(celebrity: Celebrity) {
         self.celebrity = celebrity
     }
@@ -16,17 +16,27 @@ final class InfoViewModel {
 
 extension InfoViewModel {
     struct Input {
-        let bind: ([InfoTablePair]) -> ()
+        let bind: ([InfoTableElement]) -> ()
     }
     
     struct Output {
-        let didSelect: (InfoTablePair) -> ()
+        let didSelect: (InfoTableElement) -> ()
     }
     
     func configure(input: Input) -> Output {
-//        var pair: [InfoTablePair] = []
-     
-//        input.bind(pair)
+        let сelebrityInfo = InfoTableElement.celebrityInfo(celebrity)
+        let biographyName = InfoTableElement.biographyName("Info.Biography.Text".localized)
+        let biographyInfo = InfoTableElement.biographyInfo(celebrity)
+        let achievementName = InfoTableElement.achievemntName("Info.Achievement.Text".localized)
+        let achievements = getAchievements(forCelebrityId: celebrity.id)
+        var elements: [InfoTableElement] = [сelebrityInfo, biographyName, biographyInfo, achievementName]
+        
+        for achievement in achievements {
+             let achievementInfo = InfoTableElement.achievementInfo(celebrity, achievement)
+             elements.append(achievementInfo)
+         }
+        
+        input.bind(elements)
         return Output { selected in
         }
     }

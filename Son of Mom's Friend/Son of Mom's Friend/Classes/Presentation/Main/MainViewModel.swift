@@ -11,7 +11,6 @@ final class MainViewModel {
     enum Route {
         case info(Celebrity)
     }
-    
     private lazy var celebrityManager = CelebrityManager()
     private lazy var achievementManager = AchievementManager()
     private lazy var userManager = UserManager()
