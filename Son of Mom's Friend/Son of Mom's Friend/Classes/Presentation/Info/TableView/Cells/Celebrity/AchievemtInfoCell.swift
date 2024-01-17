@@ -66,6 +66,7 @@ private extension AchievemtInfoCell {
         NSLayoutConstraint.activate([
             backgroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15.scale),
             backgroundUIView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            backgroundUIView.heightAnchor.constraint(greaterThanOrEqualToConstant: 80.scale),
             backgroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
             backgroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
             
