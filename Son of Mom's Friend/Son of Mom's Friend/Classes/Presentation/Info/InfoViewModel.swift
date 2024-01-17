@@ -25,9 +25,9 @@ extension InfoViewModel {
     
     func configure(input: Input) -> Output {
         let сelebrityInfo = InfoTableElement.celebrityInfo(celebrity)
-        let biographyName = InfoTableElement.biographyName("Info.Biography.Text".localized)
+        let biographyName = InfoTableElement.info("Info.Biography.Text".localized, .biography)
         let biographyInfo = InfoTableElement.biographyInfo(celebrity)
-        let achievementName = InfoTableElement.achievemntName("Info.Achievement.Text".localized)
+        let achievementName = InfoTableElement.info("Info.Achievement.Text".localized, .achievement)
         let achievements = getAchievements(forCelebrityId: celebrity.id)
         var elements: [InfoTableElement] = [сelebrityInfo, biographyName, biographyInfo, achievementName]
         

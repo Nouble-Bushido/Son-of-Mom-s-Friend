@@ -43,7 +43,7 @@ extension AchievementDetailsCell {
 private extension AchievementDetailsCell {
     func initialize() {
         setupRandomBackgroundColor()
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 20.scale
         selectionStyle = .none
     }
     

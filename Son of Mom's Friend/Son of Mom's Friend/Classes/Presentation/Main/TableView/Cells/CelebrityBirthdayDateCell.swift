@@ -36,7 +36,7 @@ extension CelebrityBirthdayDateCell {
 private extension CelebrityBirthdayDateCell {
     func initialize() {
         setupRandomBackgroundColor()
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 20.scale
         selectionStyle = .none
     }
     
@@ -71,8 +71,8 @@ private extension CelebrityBirthdayDateCell {
     func makeConstraints() {
         
         NSLayoutConstraint.activate([
-            backroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8.scale),
-            backroundUIView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8.scale),
+            backroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            backroundUIView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             backroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             backroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             

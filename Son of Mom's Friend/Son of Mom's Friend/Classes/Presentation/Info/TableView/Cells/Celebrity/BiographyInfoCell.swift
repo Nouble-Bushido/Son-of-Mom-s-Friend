@@ -31,7 +31,7 @@ extension BiographyInfoCell {
 //MARK: Private
 private extension BiographyInfoCell {
     func initialize() {
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 20.scale
         selectionStyle = .none
     }
 }
@@ -40,7 +40,7 @@ private extension BiographyInfoCell {
 private extension BiographyInfoCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            biographyInfoLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            biographyInfoLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.scale),
             biographyInfoLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
             biographyInfoLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
             biographyInfoLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
@@ -53,6 +53,7 @@ private extension BiographyInfoCell {
         let view = UILabel()
         view.layer.cornerRadius = 20
         view.numberOfLines = 0
+        view.font = Fonts.Nunito.regular(size: 16)
         view.layer.backgroundColor = UIColor(red: 0.945, green: 0.953, blue: 0.99, alpha: 1).cgColor
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)

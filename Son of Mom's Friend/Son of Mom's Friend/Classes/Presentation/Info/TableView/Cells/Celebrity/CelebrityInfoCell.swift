@@ -37,7 +37,7 @@ extension CelebrityInfoCell {
 //MARK: Private
 private extension CelebrityInfoCell {
     func initialize() {
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 20.scale
         selectionStyle = .none
     }
     
@@ -64,12 +64,12 @@ private extension CelebrityInfoCell {
 private extension CelebrityInfoCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            photo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20.scale),
+            photo.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
             photo.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             photo.widthAnchor.constraint(equalToConstant: 72.scale),
             photo.heightAnchor.constraint(equalToConstant: 72.scale),
             
-            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10.scale),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10.scale),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 97.scale),
             nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
             
@@ -79,7 +79,9 @@ private extension CelebrityInfoCell {
             picture.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 97.scale),
             
             birthdayLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5.scale),
-            birthdayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 120.scale)
+            birthdayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 120.scale),
+            birthdayLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
+            birthdayLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }
@@ -98,6 +100,7 @@ extension CelebrityInfoCell {
     func makeName() -> UILabel {
         let view = UILabel()
         view.numberOfLines = 0
+        view.font = Fonts.Nunito.semiBold(size: 18)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view
@@ -113,6 +116,7 @@ extension CelebrityInfoCell {
     
     func makeBirthday() -> UILabel {
         let view = UILabel()
+        view.font = Fonts.Nunito.regular(size: 14)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

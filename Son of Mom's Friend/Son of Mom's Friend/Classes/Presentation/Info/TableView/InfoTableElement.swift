@@ -8,9 +8,13 @@
 import Foundation
 
 enum InfoTableElement {
+    case info(String, InfoType)
     case celebrityInfo(Celebrity)
-    case biographyName(String)
     case biographyInfo(Celebrity)
-    case achievemntName(String)
     case achievementInfo(Celebrity, Achievement)
+}
+
+enum InfoType {
+    case biography
+    case achievement
 }

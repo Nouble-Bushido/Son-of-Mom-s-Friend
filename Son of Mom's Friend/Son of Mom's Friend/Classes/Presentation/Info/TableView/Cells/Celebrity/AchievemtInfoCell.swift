@@ -4,7 +4,7 @@
 //
 //  Created by Артем Чжен on 13.01.2024.
 //
-
+//
 import UIKit
 
 final class AchievemtInfoCell: UITableViewCell {
@@ -14,8 +14,8 @@ final class AchievemtInfoCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        initialize()
         makeConstraints()
+        initialize()
     }
     
     required init?(coder: NSCoder) {
@@ -25,9 +25,9 @@ final class AchievemtInfoCell: UITableViewCell {
 
 //MARK: Public
 extension AchievemtInfoCell {
-    func setup(celebrity: Celebrity, achievements: Achievement) {
+    func setup(celebrity: Celebrity, achievement: Achievement) {
         loadImage(from: celebrity.photoURL)
-        achievementLabel.text = achievements.description
+        achievementLabel.text = achievement.description
         setupRandomBackgroundColor()
     }
 }
@@ -35,7 +35,7 @@ extension AchievemtInfoCell {
 //MARK: Private
 private extension AchievemtInfoCell {
     func initialize() {
-        contentView.layer.cornerRadius = 20
+        contentView.layer.cornerRadius = 20.scale
         selectionStyle = .none
     }
     
@@ -64,19 +64,20 @@ private extension AchievemtInfoCell {
 private extension AchievemtInfoCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            backgroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            backgroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15.scale),
             backgroundUIView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            backgroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8.scale),
-            backgroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8.scale),
+            backgroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
+            backgroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
             
             photo.leadingAnchor.constraint(equalTo: backgroundUIView.leadingAnchor, constant: 10.scale),
             photo.centerYAnchor.constraint(equalTo: backgroundUIView.centerYAnchor),
             photo.widthAnchor.constraint(equalToConstant: 72.scale),
             photo.heightAnchor.constraint(equalToConstant: 72.scale),
             
-            achievementLabel.topAnchor.constraint(equalTo: backgroundUIView.topAnchor, constant: 10.scale),
+            achievementLabel.topAnchor.constraint(equalTo: backgroundUIView.topAnchor),
             achievementLabel.leadingAnchor.constraint(equalTo: backgroundUIView.leadingAnchor, constant: 97.scale),
-            achievementLabel.trailingAnchor.constraint(equalTo: backgroundUIView.trailingAnchor, constant: -10.scale)
+            achievementLabel.trailingAnchor.constraint(equalTo: backgroundUIView.trailingAnchor, constant: -10.scale),
+            achievementLabel.bottomAnchor.constraint(equalTo: backgroundUIView.bottomAnchor)
         ])
     }
 }
@@ -103,6 +104,7 @@ extension AchievemtInfoCell {
     func makeAchievement() -> UILabel {
         let view = UILabel()
         view.numberOfLines = 0
+        view.font = Fonts.Nunito.regular(size: 14.scale)
         view.translatesAutoresizingMaskIntoConstraints = false
         backgroundUIView.addSubview(view)
         return view

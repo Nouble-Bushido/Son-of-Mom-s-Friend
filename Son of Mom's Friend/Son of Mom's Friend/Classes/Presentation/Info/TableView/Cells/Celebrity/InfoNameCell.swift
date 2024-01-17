@@ -1,14 +1,14 @@
 //
-//  BiographyNameCell.swift
+//  InfoNameCell.swift
 //  Son of Mom's Friend
 //
-//  Created by Артем Чжен on 13.01.2024.
+//  Created by Артем Чжен on 17.01.2024.
 //
 
 import UIKit
 
-final class BiographyNameCell: UITableViewCell {
-    lazy var biographyLabel = makeBiographyName()
+final class InfoNameCell: UITableViewCell {
+    lazy var nameLabel = makeName()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,35 +22,36 @@ final class BiographyNameCell: UITableViewCell {
 }
 
 //MARK: Public
-extension BiographyNameCell {
+extension InfoNameCell {
     func setup(text: String) {
-        biographyLabel.text = text
+        nameLabel.text = text
     }
 }
 
 //MARK: Private
-private extension BiographyNameCell {
+private extension InfoNameCell {
     func initialize() {
-        contentView.layer.cornerRadius = 20
         selectionStyle = .none
     }
 }
 
 //MARK: Make Constraints
-private extension BiographyNameCell {
+private extension InfoNameCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            biographyLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            biographyLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
-            biographyLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20.scale),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10.scale),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10.scale),
+            nameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }
 
-private extension BiographyNameCell {
-    func makeBiographyName() -> UILabel {
+private extension InfoNameCell {
+    func makeName() -> UILabel {
         let view = UILabel()
         view.numberOfLines = 0
+        view.font = Fonts.Nunito.semiBold(size: 18)
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

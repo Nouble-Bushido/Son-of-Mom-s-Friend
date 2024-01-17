@@ -40,21 +40,21 @@ extension InfoTableView: UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CelebrityInfoCell.self)) as? CelebrityInfoCell else { return UITableViewCell()}
             cell.setup(celebrity: celebrity)
             return cell
-        case .biographyName(let text):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BiographyNameCell.self)) as? BiographyNameCell else { return UITableViewCell()}
+        case .info(let text, .biography):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: InfoNameCell.self)) as? InfoNameCell else { return UITableViewCell()}
             cell.setup(text: text)
             return cell
         case .biographyInfo(let celebrity):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: BiographyInfoCell.self)) as? BiographyInfoCell else { return UITableViewCell()}
             cell.setup(celebrity: celebrity)
             return cell
-        case .achievemntName(let text):
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievementNameCell.self)) as? AchievementNameCell else { return UITableViewCell()}
+        case .info(let text, .achievement):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: InfoNameCell.self)) as? InfoNameCell else { return UITableViewCell()}
             cell.setup(text: text)
             return cell
-        case .achievementInfo(let celebrity, let achievements):
+        case .achievementInfo(let celebrity, let achievement):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AchievemtInfoCell.self)) as? AchievemtInfoCell else { return UITableViewCell()}
-            cell.setup(celebrity: celebrity, achievements: achievements)
+            cell.setup(celebrity: celebrity, achievement: achievement)
             return cell
         }
     }
@@ -71,9 +71,8 @@ extension InfoTableView: UITableViewDelegate {
 private extension InfoTableView {
     func initialize() {
         register(CelebrityInfoCell.self, forCellReuseIdentifier: String(describing: CelebrityInfoCell.self))
-        register(BiographyNameCell.self, forCellReuseIdentifier: String(describing: BiographyNameCell.self))
+        register(InfoNameCell.self, forCellReuseIdentifier: String(describing: InfoNameCell.self))
         register(BiographyInfoCell.self, forCellReuseIdentifier: String(describing: BiographyInfoCell.self))
-        register(AchievementNameCell.self, forCellReuseIdentifier: String(describing: AchievementNameCell.self))
         register(AchievemtInfoCell.self, forCellReuseIdentifier: String(describing: AchievemtInfoCell.self))
         dataSource = self
         delegate = self
