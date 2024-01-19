@@ -21,10 +21,16 @@ final class MainViewCountroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         actionSettingButon()
-        
-        let output = viewModel.configure(input: MainViewModel.Input(bind: { [weak self] sections in
-            self?.mainView.tableView.setup(sections: sections)
-        }))
+      
+        let output = viewModel.configure(input: MainViewModel.Input(route: { [weak self] route in
+            switch route {
+            case .info(let celebrity):
+                let vc = InfoViewCountroller(celebrity: celebrity)
+                self?.navigationController?.pushViewController(vc, animated: true)
+                }
+            }, bind: { [weak self] sections in
+                self?.mainView.tableView.setup(sections: sections)
+            }))
         
         didSelectElements = output.didSelect
         
@@ -39,8 +45,8 @@ private extension MainViewCountroller {
         mainView.settingButton.addTarget(self, action: #selector(pressSettingButon), for: .touchUpInside)
     }
     
-    @objc
-    func pressSettingButon() {
+    @objc func pressSettingButon() {
         //TODO: go to settingView
     }
 }
+

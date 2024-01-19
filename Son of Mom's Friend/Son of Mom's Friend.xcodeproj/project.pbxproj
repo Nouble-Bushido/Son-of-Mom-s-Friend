@@ -20,6 +20,7 @@
 		1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */; };
 		1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */; };
 		1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */; };
+		1224299C2B57858F008FFF7B /* InfoNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1224299B2B57858F008FFF7B /* InfoNameCell.swift */; };
 		1275D0CB2AFDC849009F622E /* Achievement.json in Resources */ = {isa = PBXBuildFile; fileRef = 1275D0C92AFDC849009F622E /* Achievement.json */; };
 		1275D0CC2AFDC849009F622E /* Celebrity.json in Resources */ = {isa = PBXBuildFile; fileRef = 1275D0CA2AFDC849009F622E /* Celebrity.json */; };
 		1275D0CE2B01C6E7009F622E /* BirthdateRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1275D0CD2B01C6E7009F622E /* BirthdateRequestViewController.swift */; };
@@ -31,6 +32,14 @@
 		12F8B16C2B1ECB0000845A74 /* AchievementDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8B16B2B1ECB0000845A74 /* AchievementDetailsCell.swift */; };
 		12F8B16E2B1ECB7E00845A74 /* MainTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8B16D2B1ECB7E00845A74 /* MainTableElement.swift */; };
 		12F8B1702B1EEA8000845A74 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F8B16F2B1EEA8000845A74 /* MainViewModel.swift */; };
+		12FF6E7A2B3BC388002A3F0A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6E792B3BC388002A3F0A /* InfoView.swift */; };
+		12FF6E7C2B3BC3A3002A3F0A /* InfoViewCountroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6E7B2B3BC3A3002A3F0A /* InfoViewCountroller.swift */; };
+		12FF6EA22B4695A0002A3F0A /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6EA12B4695A0002A3F0A /* InfoViewModel.swift */; };
+		12FF6EA42B4962FA002A3F0A /* InfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6EA32B4962FA002A3F0A /* InfoTableView.swift */; };
+		12FF6EAA2B521E9C002A3F0A /* CelebrityInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6EA92B521E9C002A3F0A /* CelebrityInfoCell.swift */; };
+		12FF6EAE2B522C33002A3F0A /* BiographyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6EAD2B522C33002A3F0A /* BiographyInfoCell.swift */; };
+		12FF6EB22B522DDA002A3F0A /* AchievemtInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6EB12B522DDA002A3F0A /* AchievemtInfoCell.swift */; };
+		12FF6EB42B522F78002A3F0A /* InfoTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FF6EB32B522F78002A3F0A /* InfoTableElement.swift */; };
 		DE3635B82AFD40FE00B42FA2 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */; };
 		DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3635B92AFD410500B42FA2 /* SplashView.swift */; };
 		DE3635BD2AFD415A00B42FA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE3635BF2AFD415A00B42FA2 /* Localizable.strings */; };
@@ -63,6 +72,7 @@
 		1222CE842AF1F4C6003D3DB7 /* CelebrityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityManager.swift; sourceTree = "<group>"; };
 		1222CE862AF1F4D2003D3DB7 /* AchievementManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementManager.swift; sourceTree = "<group>"; };
 		1222CE902AFB47B7003D3DB7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		1224299B2B57858F008FFF7B /* InfoNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNameCell.swift; sourceTree = "<group>"; };
 		1275D0C92AFDC849009F622E /* Achievement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Achievement.json; sourceTree = "<group>"; };
 		1275D0CA2AFDC849009F622E /* Celebrity.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celebrity.json; sourceTree = "<group>"; };
 		1275D0CD2B01C6E7009F622E /* BirthdateRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdateRequestViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +84,14 @@
 		12F8B16B2B1ECB0000845A74 /* AchievementDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementDetailsCell.swift; sourceTree = "<group>"; };
 		12F8B16D2B1ECB7E00845A74 /* MainTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableElement.swift; sourceTree = "<group>"; };
 		12F8B16F2B1EEA8000845A74 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		12FF6E792B3BC388002A3F0A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		12FF6E7B2B3BC3A3002A3F0A /* InfoViewCountroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewCountroller.swift; sourceTree = "<group>"; };
+		12FF6EA12B4695A0002A3F0A /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
+		12FF6EA32B4962FA002A3F0A /* InfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableView.swift; sourceTree = "<group>"; };
+		12FF6EA92B521E9C002A3F0A /* CelebrityInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CelebrityInfoCell.swift; sourceTree = "<group>"; };
+		12FF6EAD2B522C33002A3F0A /* BiographyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyInfoCell.swift; sourceTree = "<group>"; };
+		12FF6EB12B522DDA002A3F0A /* AchievemtInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievemtInfoCell.swift; sourceTree = "<group>"; };
+		12FF6EB32B522F78002A3F0A /* InfoTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableElement.swift; sourceTree = "<group>"; };
 		DE3635B72AFD40FE00B42FA2 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		DE3635B92AFD410500B42FA2 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		DE3635BE2AFD415A00B42FA2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -171,6 +189,7 @@
 			children = (
 				1222CE922AFB487A003D3DB7 /* Splash */,
 				1222980A2B0C45E7002771CF /* Main */,
+				12FF6E782B3BC359002A3F0A /* Info */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -197,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				12F8B1652B1EC32700845A74 /* MainTableView.swift */,
-				12F8B16D2B1ECB7E00845A74 /* MainTableElement.swift */,
 				12F3755D2B32C9590020F993 /* MainTableSection.swift */,
+				12F8B16D2B1ECB7E00845A74 /* MainTableElement.swift */,
 				12F8B16A2B1ECAE300845A74 /* Cells */,
 			);
 			path = TableView;
@@ -211,6 +230,46 @@
 				12F8B16B2B1ECB0000845A74 /* AchievementDetailsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		12FF6E782B3BC359002A3F0A /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				12FF6E792B3BC388002A3F0A /* InfoView.swift */,
+				12FF6E7B2B3BC3A3002A3F0A /* InfoViewCountroller.swift */,
+				12FF6EA12B4695A0002A3F0A /* InfoViewModel.swift */,
+				12FF6EA52B4962FF002A3F0A /* TableView */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		12FF6EA52B4962FF002A3F0A /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				12FF6EA32B4962FA002A3F0A /* InfoTableView.swift */,
+				12FF6EB32B522F78002A3F0A /* InfoTableElement.swift */,
+				12FF6EA82B4BA6A2002A3F0A /* Cells */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		12FF6EA82B4BA6A2002A3F0A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				12FF6EB72B54D035002A3F0A /* Celebrity */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		12FF6EB72B54D035002A3F0A /* Celebrity */ = {
+			isa = PBXGroup;
+			children = (
+				12FF6EA92B521E9C002A3F0A /* CelebrityInfoCell.swift */,
+				1224299B2B57858F008FFF7B /* InfoNameCell.swift */,
+				12FF6EAD2B522C33002A3F0A /* BiographyInfoCell.swift */,
+				12FF6EB12B522DDA002A3F0A /* AchievemtInfoCell.swift */,
+			);
+			path = Celebrity;
 			sourceTree = "<group>";
 		};
 		DE3635AF2AFD3C2300B42FA2 /* Misc */ = {
@@ -433,8 +492,13 @@
 				1222CE872AF1F4D2003D3DB7 /* AchievementManager.swift in Sources */,
 				DE3635C22AFD421800B42FA2 /* GradientView.swift in Sources */,
 				1275D0CE2B01C6E7009F622E /* BirthdateRequestViewController.swift in Sources */,
+				12FF6EA42B4962FA002A3F0A /* InfoTableView.swift in Sources */,
 				12F8B1702B1EEA8000845A74 /* MainViewModel.swift in Sources */,
+				12FF6EB42B522F78002A3F0A /* InfoTableElement.swift in Sources */,
 				1222980C2B0C4610002771CF /* MainViewCountroller.swift in Sources */,
+				12FF6E7C2B3BC3A3002A3F0A /* InfoViewCountroller.swift in Sources */,
+				1224299C2B57858F008FFF7B /* InfoNameCell.swift in Sources */,
+				12FF6EAE2B522C33002A3F0A /* BiographyInfoCell.swift in Sources */,
 				DE3635C52AFD424400B42FA2 /* UIColor+Extension.swift in Sources */,
 				1222980E2B0C461F002771CF /* MainView.swift in Sources */,
 				12F8B16C2B1ECB0000845A74 /* AchievementDetailsCell.swift in Sources */,
@@ -450,13 +514,17 @@
 				DE3635CC2AFD42C900B42FA2 /* Scalable.swift in Sources */,
 				DE3635C72AFD426D00B42FA2 /* String+Extension.swift in Sources */,
 				1222CE912AFB47B7003D3DB7 /* SplashViewController.swift in Sources */,
+				12FF6EAA2B521E9C002A3F0A /* CelebrityInfoCell.swift in Sources */,
 				1222CE7B2AEA5A3E003D3DB7 /* User.swift in Sources */,
 				DE3635CE2AFD42DD00B42FA2 /* TextAttributes.swift in Sources */,
 				1222CE792AEA5605003D3DB7 /* Celebrity.swift in Sources */,
 				12F3755E2B32C9590020F993 /* MainTableSection.swift in Sources */,
 				DE3635BA2AFD410500B42FA2 /* SplashView.swift in Sources */,
 				1222CE7D2AEA6011003D3DB7 /* Achievement.swift in Sources */,
+				12FF6E7A2B3BC388002A3F0A /* InfoView.swift in Sources */,
+				12FF6EB22B522DDA002A3F0A /* AchievemtInfoCell.swift in Sources */,
 				1222CE852AF1F4C6003D3DB7 /* CelebrityManager.swift in Sources */,
+				12FF6EA22B4695A0002A3F0A /* InfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

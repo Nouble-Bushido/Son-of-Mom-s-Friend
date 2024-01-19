@@ -62,7 +62,8 @@ private extension SplashViewController {
     
     func presentMain() {
         let vc = MainViewCountroller()
+        let navig = UINavigationController(rootViewController: vc)
         vc.modalPresentationStyle = .overFullScreen
-        UIApplication.shared.keyWindow?.rootViewController = vc
+        UIApplication.shared.keyWindow?.rootViewController = navig
     }
 }

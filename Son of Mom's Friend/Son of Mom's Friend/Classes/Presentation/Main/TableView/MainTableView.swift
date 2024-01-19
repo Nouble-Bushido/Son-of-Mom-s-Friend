@@ -56,7 +56,7 @@ extension MainTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch sections[indexPath.section].elements[indexPath.row] {
-        case .dateBirthday(let celebrity):
+        case .celebrity(let celebrity):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CelebrityBirthdayDateCell.self)) as? CelebrityBirthdayDateCell else { return UITableViewCell()}
             cell.setup(celebrity: celebrity)
             return cell
@@ -72,7 +72,7 @@ extension MainTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedElement = sections[indexPath.section].elements[indexPath.row]
         didSelectItem?(selectedElement)
-    }
+  }
 }
 
 //MARK: UITableViewDelegate
